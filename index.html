@@ -150,12 +150,10 @@ section{padding:80px 60px}
 .stat-suffix{font-family:'Satoshi',sans-serif;font-size:34px;font-weight:500;color:var(--text);line-height:1.2;display:inline}
 .stat-label{font-size:16px;color:var(--muted);font-weight:300;margin-top:4px}
 /* TESTIMONIALS */
-.test-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
-.test-card{background:var(--card);border-radius:var(--r);padding:28px;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .3s;min-width:280px;scroll-snap-align:start}
-.test-card:hover{border-color:rgba(255,255,255,.15)}
-.test-dots{display:none;justify-content:center;gap:8px;margin-top:20px}
-.test-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);transition:all .3s;cursor:pointer}
-.test-dot.active{background:var(--accent);width:24px;border-radius:4px}
+.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.test-card{background:var(--card);border-radius:var(--r);padding:36px 32px;border:1px solid var(--border);box-shadow:var(--shadow);transition:all .3s;position:relative;overflow:hidden}
+.test-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),rgba(91,76,219,.3));opacity:0;transition:opacity .3s}
+.test-card:hover{border-color:rgba(255,255,255,.15);transform:translateY(-4px)}.test-card:hover::before{opacity:1}
 .test-stars{color:gold;font-size:16px;margin-bottom:14px;letter-spacing:2px}
 .test-text{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:18px;font-weight:300;font-style:italic}
 .test-author{font-size:14px;font-weight:600;color:var(--text)}
@@ -213,9 +211,9 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 .scroll-top:hover{border-color:rgba(255,255,255,.2);color:var(--text);transform:translateY(-2px)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:1024px){nav{padding:0 32px}section{padding:80px 32px}.hero{padding:140px 32px 80px;min-height:auto}.hero-left{width:400px}.hero-right{width:42%;height:420px}.about-grid{grid-template-columns:1fr;gap:40px}.proc-layout{grid-template-columns:1fr}.svc-layout{grid-template-columns:1fr}.test-grid{grid-template-columns:repeat(2,1fr)}.pcard{min-width:280px}.faq-tabs{justify-content:center}.exp-duration{position:relative;margin-left:0;margin-top:4px}.exp-top{flex-wrap:wrap}}
-@media(max-width:768px){nav{padding:0 20px;height:64px}.nav-links{display:none}.hamburger{display:flex}section{padding:80px 20px}.hero{padding:110px 20px 60px;flex-direction:column;text-align:center;min-height:auto;gap:32px}.hero-left{width:100%}.hero-right{position:relative;right:auto;top:auto;transform:none;width:100%;height:320px;border-radius:var(--r)}.hero h1{font-size:64px}.hero-sub{font-size:16px;text-align:center;margin:0 auto 36px;max-width:100%}.hero-btns{justify-content:center}.hero-tag{margin:0 auto 24px;justify-content:center}.hero-spotlight{display:none}.scroll-hint{justify-content:center}.about-grid{gap:32px}.about-photo{max-width:300px;margin:0 auto}.proc-steps{flex-direction:column}.svc-layout{grid-template-columns:1fr}.test-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;gap:12px;padding-bottom:8px;scrollbar-width:none}.test-grid::-webkit-scrollbar{display:none}.test-dots{display:flex}.stats-row{flex-direction:column}.stat-item{border-right:none;border-bottom:1px solid var(--border)}.stat-item:last-child{border-bottom:none}.pcard{min-width:260px}.pbtn-wrap{padding:20px}.pname{font-size:18px}.sec-desc{max-width:100%}.faq-grid{max-width:100%}.cemail{font-size:18px;padding:14px 24px}.socials{gap:8px}.sbtn{padding:8px 16px;font-size:13px}footer{flex-direction:column;gap:10px;text-align:center;padding:24px 20px}.scroll-top{bottom:20px;right:20px;width:40px;height:40px}.marquee-section{padding:16px 0 32px}.marquee-item{width:140px;padding:0 14px}.marquee-item img{height:40px}.marquee-section::before,.marquee-section::after{width:45%}}
-@media(max-width:480px){section{padding:64px 16px}.hero{padding:100px 16px 48px}.hero h1{font-size:48px}.hero-sub{font-size:14px}.hero-btns{flex-direction:column;align-items:stretch}.btn-g,.btn-outline{justify-content:center;width:100%}.nav-cta{padding:8px 16px;font-size:13px}nav{padding:0 16px}.about-photo{max-width:240px;margin:0 auto}.exp-card{padding:18px}.svccard{padding:20px}.svc-more{padding:20px}.svc-tag{padding:6px 12px;font-size:12px}.test-card{padding:20px;min-width:260px}.faq-tab{padding:8px 16px;font-size:13px}.faqq{padding:16px 18px;font-size:14px}.faqa-inner{padding:0 18px 16px;font-size:14px}.pcard{min-width:240px}.pbtn-wrap{padding:16px}.pdesc{font-size:12px}.pname{font-size:16px}footer{padding:20px 16px}.tech-icon{width:22px;height:22px}.tech-grid{gap:8px}.tech-item{padding:10px;border-radius:6px}.marquee-section{padding:12px 0 24px}.marquee-item{width:110px;padding:0 10px}.marquee-item img{height:32px}.marquee-section::before,.marquee-section::after{width:35%}}
+@media(max-width:1024px){nav{padding:0 32px}section{padding:80px 32px}.hero{padding:140px 32px 80px;min-height:auto}.hero-left{width:400px}.hero-right{width:42%;height:420px}.about-grid{grid-template-columns:1fr;gap:40px}.proc-layout{grid-template-columns:1fr}.svc-layout{grid-template-columns:1fr}.pcard{min-width:280px}.faq-tabs{justify-content:center}.exp-duration{position:relative;margin-left:0;margin-top:4px}.exp-top{flex-wrap:wrap}}
+@media(max-width:768px){nav{padding:0 20px;height:64px}.nav-links{display:none}.hamburger{display:flex}section{padding:80px 20px}.hero{padding:110px 20px 60px;flex-direction:column;text-align:center;min-height:auto;gap:32px}.hero-left{width:100%}.hero-right{position:relative;right:auto;top:auto;transform:none;width:100%;height:320px;border-radius:var(--r)}.hero h1{font-size:64px}.hero-sub{font-size:16px;text-align:center;margin:0 auto 36px;max-width:100%}.hero-btns{justify-content:center}.hero-tag{margin:0 auto 24px;justify-content:center}.hero-spotlight{display:none}.scroll-hint{justify-content:center}.about-grid{gap:32px}.about-photo{max-width:300px;margin:0 auto}.proc-steps{flex-direction:column}.svc-layout{grid-template-columns:1fr}.test-grid{grid-template-columns:1fr;gap:16px}.stats-row{flex-direction:column}.stat-item{border-right:none;border-bottom:1px solid var(--border)}.stat-item:last-child{border-bottom:none}.pcard{min-width:260px}.pbtn-wrap{padding:20px}.pname{font-size:18px}.sec-desc{max-width:100%}.faq-grid{max-width:100%}.cemail{font-size:18px;padding:14px 24px}.socials{gap:8px}.sbtn{padding:8px 16px;font-size:13px}footer{flex-direction:column;gap:10px;text-align:center;padding:24px 20px}.scroll-top{bottom:20px;right:20px;width:40px;height:40px}.marquee-section{padding:16px 0 32px}.marquee-item{width:140px;padding:0 14px}.marquee-item img{height:40px}.marquee-section::before,.marquee-section::after{width:45%}}
+@media(max-width:480px){section{padding:64px 16px}.hero{padding:100px 16px 48px}.hero h1{font-size:48px}.hero-sub{font-size:14px}.hero-btns{flex-direction:column;align-items:stretch}.btn-g,.btn-outline{justify-content:center;width:100%}.nav-cta{padding:8px 16px;font-size:13px}nav{padding:0 16px}.about-photo{max-width:240px;margin:0 auto}.exp-card{padding:18px}.svccard{padding:20px}.svc-more{padding:20px}.svc-tag{padding:6px 12px;font-size:12px}.test-card{padding:24px}.faq-tab{padding:8px 16px;font-size:13px}.faqq{padding:16px 18px;font-size:14px}.faqa-inner{padding:0 18px 16px;font-size:14px}.pcard{min-width:240px}.pbtn-wrap{padding:16px}.pdesc{font-size:12px}.pname{font-size:16px}footer{padding:20px 16px}.tech-icon{width:22px;height:22px}.tech-grid{gap:8px}.tech-item{padding:10px;border-radius:6px}.marquee-section{padding:12px 0 24px}.marquee-item{width:110px;padding:0 10px}.marquee-item img{height:32px}.marquee-section::before,.marquee-section::after{width:35%}}
 
 /* ── CASE STUDY NAV ── */
 .cs-nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(0,0,0,.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);animation:navSlideDown .5s ease both}
@@ -495,10 +493,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
   <div class="test-grid reveal">
     <div class="test-card"><div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="test-text">Iyanu brought our vision to life with incredible attention to detail. The design system he built saved our team months of work.</p><div class="test-author">Amos Peter</div><div class="test-role">Founder, Gloroq</div></div>
     <div class="test-card"><div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="test-text">His ability to simplify complex multi-user flows is remarkable. The dual dashboard system he designed was exactly what we needed.</p><div class="test-author">Adeola Adeyemo</div><div class="test-role">Product Manager, UVS</div></div>
-    <div class="test-card"><div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="test-text">Iyanu is a thoughtful designer who truly listens. He turned our rough ideas into a clean, intuitive product our users love.</p><div class="test-author">Oyewole Saheed</div><div class="test-role">CEO, HireWise</div></div>
-    <div class="test-card"><div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="test-text">Professional, fast, and creative. He delivered a polished design that exceeded our expectations and was easy to hand off to dev.</p><div class="test-author">Ethan Raymond</div><div class="test-role">CTO, XEND</div></div>
   </div>
-  <div class="test-dots" id="testDots"><span class="test-dot active"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span></div>
 </section>
 
 <section id="faq">
@@ -684,7 +679,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
       </div>
       <div class="cv-section">
         <div class="cv-section-title">Professional Summary</div>
-        <p class="cv-summary">Product Designer with combined design experience spanning since 2017 across graphic design and product/UX design, including 2+ years in dedicated product design roles. Sole designer on Gloroq, a competitive esports platform, delivering the landing page, authentication flow, user dashboard, creator dashboard, and admin panel from wireframe to developer handoff with zero handoff friction. Led 3 full design revisions of BladeRoom, a multi-role booking platform, while also building its frontend. Skilled in user research, wireframing, high-fidelity UI, prototyping, and cross-functional collaboration with developers and founders in fast-moving startup environments.</p>
+        <p class="cv-summary">Product Designer focused on multi-user platforms, apps, and dashboards where clients, staff, and admins each need a distinct experience. Sole designer on two platforms: a competitive gaming platform with dual dashboards and role-based flows, and a multi-entity booking platform with three separate onboarding paths and a full dark mode system, owning each end-to-end from wireframe through developer handoff. Also independently designed and shipped a personal product using AI-assisted development.</p>
       </div>
       <div class="cv-section">
         <div class="cv-section-title">Experience</div>
@@ -877,22 +872,6 @@ if(heroSpotlight&&heroSection){
     const app = new Application(canvas);
     app.load('https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode');
 }
-// Testimonial dots
-(function(){
-  var grid=document.querySelector('.test-grid');
-  var dots=document.getElementById('testDots');
-  if(!grid||!dots)return;
-  var cards=grid.querySelectorAll('.test-card');
-  var dotEls=dots.querySelectorAll('.test-dot');
-  function updateDots(){
-  var scrollLeft=grid.scrollLeft;
-  var cardW=cards[0].offsetWidth+12;
-  var idx=Math.round(scrollLeft/cardW);
-  dotEls.forEach(function(d,i){d.classList.toggle('active',i===idx)});
-  }
-  grid.addEventListener('scroll',updateDots);
-  dotEls.forEach(function(d,i){d.addEventListener('click',function(){var cardW=cards[0].offsetWidth+12;grid.scrollTo({left:i*cardW,behavior:'smooth'})})});
-})();
 </script>
 <script>
 // Stats count-up animation
