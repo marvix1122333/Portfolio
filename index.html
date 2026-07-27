@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Iyanu Olamide — Product Designer</title>
+<title>Iyanu Olamide | Product Designer</title>
 <link rel="icon" type="image/png" href="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png">
 <meta name="description" content="Product Designer crafting mobile apps and dashboard platforms for complex, multi-user products.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -244,17 +244,25 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 .scr-section{padding:0 60px 72px}
 .scr-label{font-size:10.5px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:26px;display:flex;align-items:center;gap:10px}
 .scr-label::before{content:'';width:20px;height:1.5px;background:var(--accent)}
-.sgrid{display:grid;gap:14px}
+.sgrid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:rgba(91,76,219,.3) transparent}.sgrid::-webkit-scrollbar{height:5px}.sgrid::-webkit-scrollbar-track{background:transparent}.sgrid::-webkit-scrollbar-thumb{background:rgba(91,76,219,.3);border-radius:10px}
 .sg2{grid-template-columns:repeat(2,1fr)}.sg3{grid-template-columns:repeat(3,1fr)}.sg4{grid-template-columns:repeat(4,1fr)}
-.scrcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease}
+.scrcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;flex:0 0 auto;scroll-snap-align:start}.sgrid.sg4 .scrcard{width:clamp(200px,22vw,260px)}.sgrid.sg3 .scrcard{width:clamp(220px,26vw,300px)}.sgrid.sg2 .scrcard{width:clamp(280px,38vw,420px)}
 .scrcard:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5);border-color:rgba(91,76,219,.2)!important}
 .scrcard img{width:100%;display:block;cursor:pointer;transition:transform .4s ease,filter .3s ease}
 .scrcard img.mob{aspect-ratio:9/19;object-fit:cover;background:var(--bg2)}
 .scrcard img.desk{aspect-ratio:16/10;object-fit:contain;background:var(--bg)}
 .scrcard:hover img.mob{transform:scale(1.06)}
 .scrcard:hover img.desk{transform:scale(1.04)}
-.scrcard::after{content:'Click to preview';position:absolute;inset:0;background:rgba(0,0,0,0);color:rgba(255,255,255,0);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:all .3s ease;pointer-events:none;font-family:'Inter',sans-serif}
-.scrcard:hover::after{background:rgba(0,0,0,.45);color:rgba(255,255,255,.9)}
+.sg1{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:rgba(91,76,219,.3) transparent}
+.sg1::-webkit-scrollbar{height:5px}.sg1::-webkit-scrollbar-track{background:transparent}.sg1::-webkit-scrollbar-thumb{background:rgba(91,76,219,.3);border-radius:10px}
+.auto-scroll-card{flex:1 1 0;min-width:0;scroll-snap-align:start;height:clamp(300px,36vh,420px);overflow:hidden;cursor:pointer;position:relative;background:transparent;border:1px solid var(--border);border-radius:var(--r)}
+.auto-scroll-img{width:100%;height:100%;overflow:hidden;position:relative}
+.auto-scroll-img img{width:100%;display:block;object-fit:cover;transition:filter .3s ease}
+.fill-card{background:transparent;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;position:relative}
+.fill-card img{width:100%;height:100%;display:block;object-fit:fill}
+.cs-overlay-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 16px 14px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:13px;font-weight:500;letter-spacing:.3px;pointer-events:none;z-index:2;transition:backdrop-filter .3s ease,background .3s ease}
+.auto-scroll-card:hover .cs-overlay-cap{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:linear-gradient(transparent,rgba(0,0,0,.6))}
+.fill-card:hover .cs-overlay-cap{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:linear-gradient(transparent,rgba(0,0,0,.7))}
 .scrcap{padding:13px 15px;font-size:12.5px;color:var(--muted);line-height:1.4}
 /* ── PROTO BOX ── */
 .proto-box{margin:0 60px 72px;background:var(--bg2);border:1px solid var(--border);border-radius:24px;padding:48px;text-align:center}
@@ -355,9 +363,9 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 @keyframes pageOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-12px)}}
 /* ── CASE STUDY RESPONSIVE ── */
 @media(max-width:1024px){.cs-nav{padding:0 32px}.cs-hero{padding:120px 32px 64px}.cs-body{padding:64px 32px}.scr-section{padding:0 32px 60px}.proto-box{margin:0 32px 60px}.nxt-proj{margin:0 32px 60px}}
-@media(max-width:768px){.cs-nav{padding:0 20px;height:64px}.cs-hero{padding:100px 20px 56px}.cs-title{font-size:44px;letter-spacing:-.01em}.csmeta{flex-direction:column;gap:14px}.csmitem{padding:0;border-right:none;margin-right:0;border-bottom:1px solid var(--border);padding-bottom:14px}.csmitem:last-child{border-bottom:none;padding-bottom:0}.cs-body{padding:52px 20px}.scr-section{padding:0 20px 56px}.sg3,.sg4{grid-template-columns:repeat(2,1fr)}.sg2{grid-template-columns:1fr}.proto-box{margin:0 20px 56px;padding:24px 18px}.nxt-proj{margin:0 20px 56px;padding:24px 20px;flex-direction:column;gap:14px;align-items:flex-start}}
+@media(max-width:768px){.cs-nav{padding:0 20px;height:64px}.cs-hero{padding:100px 20px 56px}.cs-title{font-size:44px;letter-spacing:-.01em}.csmeta{flex-direction:column;gap:14px}.csmitem{padding:0;border-right:none;margin-right:0;border-bottom:1px solid var(--border);padding-bottom:14px}.csmitem:last-child{border-bottom:none;padding-bottom:0}.cs-body{padding:52px 20px}.scr-section{padding:0 20px 56px}.proto-box{margin:0 20px 56px;padding:24px 18px}.nxt-proj{margin:0 20px 56px;padding:24px 20px;flex-direction:column;gap:14px;align-items:flex-start}}
 @media(max-width:480px){.cs-hero{padding:90px 16px 48px}.cs-title{font-size:36px;letter-spacing:-.01em}.pgrid{grid-template-columns:1fr;gap:12px}.sg4{grid-template-columns:repeat(2,1fr)}.sg2{grid-template-columns:1fr}.cs-nav{padding:0 16px}}
-@media(max-width:900px) and (min-width:769px){.cs-nav{padding:0 36px}.cs-hero{padding:108px 36px 60px}.cs-body{padding:60px 36px}.scr-section{padding:0 36px 60px}.sg4{grid-template-columns:repeat(2,1fr)}.nxt-proj{margin:0 36px 60px}.proto-box{margin:0 36px 60px}}
+@media(max-width:900px) and (min-width:769px){.cs-nav{padding:0 36px}.cs-hero{padding:108px 36px 60px}.cs-body{padding:60px 36px}.scr-section{padding:0 36px 60px}.nxt-proj{margin:0 36px 60px}.proto-box{margin:0 36px 60px}}
 </style>
 </head>
 <body>
@@ -447,7 +455,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
   <div class="reveal"><div class="eyebrow">Process</div><h2 class="sec-title">My process.</h2><p class="sec-desc">Grounded in understanding real problems, aligning user needs with business goals, and delivering solutions that are simple, scalable, and measurable.</p></div>
   <div class="proc-layout">
     <div class="proc-steps reveal">
-      <div class="proc-step"><div class="step-badge">1</div><h4>Discovery</h4><p>I begin every project with discovery &mdash; deeply understanding the problem through research, stakeholder alignment, and user insights. These findings guide the entire design phase.</p></div>
+      <div class="proc-step"><div class="step-badge">1</div><h4>Discovery</h4><p>I begin every project with discovery, deeply understanding the problem through research, stakeholder alignment, and user insights. These findings guide the entire design phase.</p></div>
       <div class="proc-step"><div class="step-badge">2</div><h4>Design</h4><p>Design is where insights take shape. I translate research into clear user flows, wireframes, and intuitive interfaces, iterating through exploration, prototyping, and validation.</p></div>
       <div class="proc-step"><div class="step-badge">3</div><h4>Delivery</h4><p>Delivery is focused on refinement and execution. I finalize designs, validate usability, and prepare development-ready handoffs with clarity, consistency, and smooth implementation.</p></div>
     </div>
@@ -576,17 +584,17 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <h2 class="cbh2">Why this needed two dashboards, not one</h2><p class="cbp">Gaming competitions are fragmented, with no unified place to discover tournaments, join teams, or manage an event once it&rsquo;s created. Creators in particular spend long stretches on screen running their competitions, so the experience needed to feel comfortable over hours of use, not just usable.</p><h2 class="cbh2">The Solution</h2><p class="cbp">Gloroq is a desktop platform where you can browse and join tournaments, build a team, or create your own competition and run it as a creator. Creators switch into a separate dashboard to manage the competitions they&rsquo;re running, kept visually distinct from the regular gamer view so it&rsquo;s always clear which mode you&rsquo;re in, whether you&rsquo;re playing or hosting.</p><h3 class="cbh3">Dual dashboard system</h3><p class="cbp">Users have a standard audience/gamer dashboard. Creators switch into a separate creator mode with a <strong>distinct theme color</strong>, making it immediately clear which mode they&rsquo;re in and preventing confusion between the two experiences.</p>
 </div>
 <div class="scr-section"><div class="scr-label">Audience &amp; Gamer View</div><div class="sgrid sg2">
-<div class="scrcard"><img class="desk" data-fit="true" src="assets/gloroq/Choose games after Registration.png" alt="Home: explore competitions" onclick="openModal(this)"><div class="scrcap">Pick a Game</div></div>
-<div class="scrcard"><img class="desk" data-fit="true" src="assets/gloroq/Michael james ticket Message.jpg" alt="Opened Ticket" onclick="openModal(this)"><div class="scrcap">Opened Ticket</div></div>
-<div class="scrcard"><img class="desk" data-fit="true" src="assets/gloroq/Teams.jpg" alt="Join or browse teams" onclick="openModal(this)"><div class="scrcap">Join or browse teams</div></div>
-<div class="scrcard"><img class="desk" data-fit="true" src="assets/gloroq/dashboard-existing user.jpg" alt="Personal dashboard" onclick="openModal(this)"><div class="scrcap">Personal dashboard</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Choose games after Registration.png" alt="Home: explore competitions" onclick="openModal(this)"></div><div class="cs-overlay-cap">Pick a Game</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Michael james ticket Message.jpg" alt="Opened Ticket" onclick="openModal(this)"></div><div class="cs-overlay-cap">Opened Ticket</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Teams.jpg" alt="Join or browse teams" onclick="openModal(this)"></div><div class="cs-overlay-cap">Join or browse teams</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/dashboard-existing user.jpg" alt="Personal dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Personal dashboard</div></div>
 </div></div>
 <div class="scr-section"><div class="scr-label">Creator Dashboard</div><div class="sgrid sg2">
-<div class="scrcard"><img class="desk" data-fit="true" src="assets/gloroq/Creator's dashboard overview.jpg" alt="Creator home, different theme" onclick="openModal(this)"><div class="scrcap">Creator home, different theme</div></div>
-<div class="scrcard"><img class="desk" data-fit="true" src="assets/gloroq/Creator-Competition Created.png" alt="Create a competition" onclick="openModal(this)"><div class="scrcap">Competition Created Successfully</div></div>
-<div class="scrcard"><img class="desk" data-fit="true" src="assets/gloroq/Creeator-Manage competition.jpg" alt="Manage team" onclick="openModal(this)"><div class="scrcap">Manage Team</div></div>
-<div class="scrcard"><img class="desk" data-fit="true" src="assets/gloroq/Admin dashboard - Overview.png" alt="Admin dashboard" onclick="openModal(this)"><div class="scrcap">Admin dashboard</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Creator's dashboard overview.jpg" alt="Creator home, different theme" onclick="openModal(this)"></div><div class="cs-overlay-cap">Creator home, different theme</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Creator-Competition Created.png" alt="Create a competition" onclick="openModal(this)"></div><div class="cs-overlay-cap">Competition Created Successfully</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Creeator-Manage competition.jpg" alt="Manage team" onclick="openModal(this)"></div><div class="cs-overlay-cap">Manage Team</div></div>
 </div></div>
+<div class="scr-section" style="max-width:70%;margin:0 auto 72px;padding:0"><div class="scr-label" style="justify-content:center">Admin Dashboard</div><div class="sgrid sg1"><div class="scrcard auto-scroll-card" style="height:clamp(620px,73vh,870px)"><div class="auto-scroll-img"><img src="assets/gloroq/Admin dashboard - Overview.png" alt="Admin dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin dashboard</div></div></div></div>
 <div class="nxt-proj" onclick="showCase('uvs')"><div><div class="nxt-label">Next project</div><div class="nxt-name">UVS</div></div><div class="nxt-arrow">&rarr;</div></div>
 <footer><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><div class="fcopy"><span>&copy; 2026 Marvix</span></div></footer>
 </div>
@@ -596,7 +604,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <nav class="cs-nav"><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><button class="back-btn" onclick="goHome()">&larr; Back to portfolio</button></nav>
 <div class="cs-hero"><div class="cs-orb"></div><div class="eyebrow">Case Study &middot; Mobile App</div><h1 class="cs-title">UVS</h1><p class="cs-desc">Multi-entity barbering platform with three completely separate onboarding paths for clients, barbers and organisations, plus a full dark mode design system and admin dashboard.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px"><span class="pt m">Mobile App</span><span class="pt m">Dark Mode</span><span class="pt m">Multi-Entity</span></div><div class="csmeta"><div class="csmitem"><div class="csmlabel">My Role</div><div class="csmval">Product Designer (Solo)</div></div><div class="csmitem"><div class="csmlabel">Platform</div><div class="csmval">iOS Mobile App</div></div><div class="csmitem"><div class="csmlabel">Tools</div><div class="csmval">Figma + Prototyping</div></div><div class="csmitem"><div class="csmlabel">Client</div><div class="csmval">UVS</div></div></div></div>
 <div class="cs-body">
-<h2 class="cbh2">Why this needed three separate flows</h2><p class="cbp">Before UVS, finding a trustworthy barber was mostly guesswork if not impossible, worse for anyone who&rsquo;d just relocated and had no local recommendations to go on. Barbers had the opposite problem: no real way to open up to more clients beyond who happened to find them through word of mouth. And a third case had almost no infrastructure at all &mdash; organisations booking a barber for their staff ahead of an event, a use case that&rsquo;s still uncommon in Africa but real enough that it needed its own flow rather than being forced into the individual-client experience.</p><h2 class="cbh2">Working from the client&rsquo;s PRD, three distinct problems became clear</h2><p class="cbp">UVS solves this with three separate onboarding paths chosen at the very start of sign-up. Clients get a dedicated space to find and vet barbers instead of relying on guesswork. Barbers get tools to manage a real client base and schedule, beyond whoever finds them by chance. Entities get a flow built specifically for booking barbers for a group &mdash; like staff for an event, anyone they&rsquo;re arranging on someone else&rsquo;s behalf. Once a user selects their type, they enter a completely tailored experience, with nothing overlapping between the three.</p><h3 class="cbh3">Dark mode design system</h3><p class="cbp">UVS was built with a full dark mode design system, not just a colour toggle, but a complete rethink of contrast, depth, and hierarchy for low-light environments. The admin dashboard extends this to desktop scale.</p><h3 class="cbh3">Barber personal profile pages</h3><p class="cbp">Beyond the app, each barber gets a customisable personal webpage they can share with clients or use for their own advertising &mdash; editorial, brandable, and built with room for the UVS team to expand it further down the line.</p>
+<h2 class="cbh2">One platform, three completely different users</h2><p class="cbp">Before UVS, finding a trustworthy barber was mostly guesswork if not impossible, worse for anyone who&rsquo;d just relocated and had no local recommendations to go on. Barbers had the opposite problem: no real way to open up to more clients beyond who happened to find them through word of mouth. And a third case had almost no infrastructure at all, organisations booking a barber for their staff ahead of an event, a use case that&rsquo;s still uncommon in Africa but real enough that it needed its own flow rather than being forced into the individual-client experience.</p><h2 class="cbh2">The Solution</h2><p class="cs-sub" style="font-size:14px;color:var(--muted);margin-top:-12px;margin-bottom:20px;font-style:italic;">Working from the client&rsquo;s PRD, three distinct problems became clear</p><p class="cbp">UVS solves this with three separate onboarding paths chosen at the very start of sign-up. Clients get a dedicated space to find and vet barbers instead of relying on guesswork. Barbers get tools to manage a real client base and schedule, beyond whoever finds them by chance. Entities get a flow built specifically for booking barbers for a group, like staff for an event, anyone they&rsquo;re arranging on someone else&rsquo;s behalf. Once a user selects their type, they enter a completely tailored experience, with nothing overlapping between the three.</p><h3 class="cbh3">Dark mode design system</h3><p class="cbp">UVS was built with a full dark mode design system, not just a colour toggle, but a complete rethink of contrast, depth, and hierarchy for low-light environments. The admin dashboard extends this to desktop scale.</p>
 </div>
 <div class="scr-section"><div class="scr-label">Client Flow</div><div class="sgrid sg4">
 <div class="scrcard"><img class="mob" src="assets/uvs/Client - Onboarding.png" alt="Client Onboarding" onclick="openModal(this)"><div class="scrcap">Client Onboarding</div></div>
@@ -623,14 +631,12 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <div class="scrcard"><img class="mob" src="assets/uvs/Entity Home Darkmode.png" alt="Entity Dark Mode" onclick="openModal(this)"><div class="scrcap">Entity Dark Mode</div></div>
 </div></div>
 <div class="scr-section"><div class="scr-label">Admin Dashboard</div><div class="sgrid sg2">
-<div class="scrcard"><img class="desk" src="assets/uvs/Super Admin Dashboard.png" alt="Super Admin Dashboard" onclick="openModal(this)"><div class="scrcap">Super Admin Dashboard</div></div>
-<div class="scrcard"><img class="desk" src="assets/uvs/Admin Dashboard - Users.png" alt="Admin Users" onclick="openModal(this)"><div class="scrcap">Admin, Users</div></div>
-<div class="scrcard"><img class="desk" src="assets/uvs/Admin Create Account.png" alt="Admin Create Account" onclick="openModal(this)"><div class="scrcap">Admin, Create Account</div></div>
-<div class="scrcard"><img class="desk" src="assets/uvs/MacBook Air (2022).png" alt="Admin MacBook View" onclick="openModal(this)"><div class="scrcap">Admin MacBook View</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/uvs/Super Admin Dashboard.png" alt="Super Admin Dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Super Admin Dashboard</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/uvs/Admin Dashboard - Users.png" alt="Admin Users" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin, Users</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/uvs/Admin Create Account.png" alt="Admin Create Account" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin, Create Account</div></div>
 </div></div>
-<div class="scr-section"><div class="scr-label">Barber Profile Web</div><div class="sgrid sg2">
-<div class="scrcard"><img class="desk" src="assets/uvs/Barber Profile Webpage.jpg" alt="Barber Profile Webpage" onclick="openModal(this)"><div class="scrcap">Barber Profile Webpage</div></div>
-<div class="scrcard"><img class="desk" src="assets/uvs/MacBook Air (2022).png" alt="MacBook Air View" onclick="openModal(this)"><div class="scrcap">MacBook Air View</div></div>
+<div class="scr-section"><div class="scr-label">Barber Profile Web</div><p class="cbp" style="margin-bottom:20px;max-width:clamp(320px,42vw,500px)">Beyond the app, each barber gets a customisable personal webpage they can share with clients or use for their own advertising, editorial, brandable, and built with room for the UVS team to expand it further down the line.</p><div class="sgrid sg2">
+<div class="scrcard auto-scroll-card" style="flex:0 0 auto;width:clamp(280px,38vw,420px);height:clamp(300px,36vh,420px)"><div class="auto-scroll-img"><img src="assets/uvs/Barber Profile Webpage.jpg" alt="Barber Profile Webpage" onclick="openModal(this)"></div><div class="cs-overlay-cap">Barber Profile Webpage</div></div>
 </div></div>
 <div class="nxt-proj" onclick="showCase('bladeroom')"><div><div class="nxt-label">Back to first project</div><div class="nxt-name">BladeRoom</div></div><div class="nxt-arrow">&rarr;</div></div>
 <footer><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><div class="fcopy"><span>&copy; 2026 Marvix</span></div></footer>
@@ -642,7 +648,6 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
     <h3>Viewing Images</h3>
     <p>You can zoom in and navigate through screens easily.</p>
     <div class="onboard-tip"><div class="onboard-tip-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01"/><circle cx="12" cy="16" r="2"/></svg></div><div class="onboard-tip-text"><strong style="color:#ededed">Mouse / Trackpad</strong><br>Scroll to zoom in and out</div></div>
-    <div class="onboard-tip"><div class="onboard-tip-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg></div><div class="onboard-tip-text"><strong style="color:#ededed">Mobile</strong><br>Double-tap or pinch with two fingers to zoom</div></div>
     <div class="onboard-tip"><div class="onboard-tip-icon" style="font-size:16px;color:var(--muted)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div><div class="onboard-tip-text"><strong style="color:#ededed">Navigate</strong><br>Tap arrows or use keyboard arrow keys</div></div>
     <button class="onboard-ok" onclick="dismissOnboard()">Got it, let me explore <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg></button>
   </div>
@@ -655,7 +660,6 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
   <div class="img-modal-nav img-modal-prev" onclick="modalNav(-1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></div>
   <div class="img-modal-nav img-modal-next" onclick="modalNav(1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
   <div class="img-modal-caption" id="modalCaption"></div>
-  <div class="zoom-hint" id="zoomHint">scroll to zoom &middot; pinch to zoom on mobile</div>
 </div>
 
 <!-- CV MODAL -->
@@ -730,7 +734,7 @@ function showCase(id){
     next.classList.add('active','entering');
     window.scrollTo({top:0});
     history.pushState({page:id},'',window.location.pathname+'#'+id);
-    setTimeout(function(){next.classList.remove('entering');initReveal()},400);
+    setTimeout(function(){next.classList.remove('entering');initReveal();initAutoScroll()},400);
   },250);
 }
 function goHome(){
@@ -742,7 +746,7 @@ function goHome(){
       document.getElementById('page-home').classList.add('active','entering');
       history.pushState({page:'home'},'',window.location.pathname);
       window.scrollTo({top:0});
-      setTimeout(function(){document.getElementById('page-home').classList.remove('entering');if(scrollRestore){window.scrollTo({top:scrollRestore});scrollRestore=0}},400);
+      setTimeout(function(){document.getElementById('page-home').classList.remove('entering');initReveal();if(scrollRestore){window.scrollTo({top:scrollRestore});scrollRestore=0}},400);
     },250);
   }else{
     document.getElementById('page-home').classList.add('active');
@@ -758,6 +762,7 @@ window.addEventListener('popstate',function(e){
   next.classList.add('active');
   window.scrollTo({top:0});
   initReveal();
+  if(page!=='home')initAutoScroll();
 });
 (function(){
   var hash=window.location.hash.replace('#','');
@@ -765,6 +770,7 @@ window.addEventListener('popstate',function(e){
     document.getElementById('page-home').classList.remove('active');
     document.getElementById('page-'+hash).classList.add('active');
     history.replaceState({page:hash},'',window.location.pathname+'#'+hash);
+    setTimeout(function(){if(typeof initAutoScroll==='function')initAutoScroll()},100);
   }else{
     history.replaceState({page:'home'},'',window.location.pathname);
   }
@@ -899,6 +905,34 @@ if(statsSection){
     if(entries[0].isIntersecting){animateStats();statsObs.disconnect();}
   },{threshold:0.3});
   statsObs.observe(statsSection);
+}
+function initAutoScroll(){
+  var active=document.querySelector('.page.active');
+  if(!active)return;
+  var cards=active.querySelectorAll('.auto-scroll-card');
+  cards.forEach(function(card){
+    if(card.dataset.scrollInit)return;
+    card.dataset.scrollInit='1';
+    var img=card.querySelector('img');
+    if(!img)return;
+    function init(){
+      if(!img.naturalWidth||!img.offsetWidth)return;
+      var naturalH=img.naturalHeight*(img.offsetWidth/img.naturalWidth)-card.offsetHeight;
+      if(naturalH<=0)return;
+      var dur=12;
+      var id='autoScroll'+Math.random().toString(36).substr(2,5);
+      var keyframes='@keyframes '+id+'{0%{transform:translateY(0)}50%{transform:translateY(-'+naturalH+'px)}100%{transform:translateY(0)}}';
+      var style=document.createElement('style');
+      style.textContent=keyframes;
+      document.head.appendChild(style);
+      img.style.animation=id+' '+dur+'s ease-in-out infinite';
+      card.addEventListener('mouseenter',function(){img.style.animationPlayState='paused'});
+      card.addEventListener('mouseleave',function(){img.style.animationPlayState='running'});
+    }
+    if(img.complete&&img.offsetWidth>0)init();
+    else if(img.complete)setTimeout(init,50);
+    else img.addEventListener('load',function(){setTimeout(init,50)});
+  });
 }
 </script>
 </body>
