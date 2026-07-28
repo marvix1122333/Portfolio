@@ -366,6 +366,22 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 @media(max-width:768px){.cs-nav{padding:0 20px;height:64px}.cs-hero{padding:100px 20px 56px}.cs-title{font-size:44px;letter-spacing:-.01em}.csmeta{flex-direction:column;gap:14px}.csmitem{padding:0;border-right:none;margin-right:0;border-bottom:1px solid var(--border);padding-bottom:14px}.csmitem:last-child{border-bottom:none;padding-bottom:0}.cs-body{padding:52px 20px}.scr-section{padding:0 20px 56px}.proto-box{margin:0 20px 56px;padding:24px 18px}.nxt-proj{margin:0 20px 56px;padding:24px 20px;flex-direction:column;gap:14px;align-items:flex-start}}
 @media(max-width:480px){.cs-hero{padding:90px 16px 48px}.cs-title{font-size:36px;letter-spacing:-.01em}.pgrid{grid-template-columns:1fr;gap:12px}.sg4{grid-template-columns:repeat(2,1fr)}.sg2{grid-template-columns:1fr}.cs-nav{padding:0 16px}}
 @media(max-width:900px) and (min-width:769px){.cs-nav{padding:0 36px}.cs-hero{padding:108px 36px 60px}.cs-body{padding:60px 36px}.scr-section{padding:0 36px 60px}.nxt-proj{margin:0 36px 60px}.proto-box{margin:0 36px 60px}}
+/* ── LANDING PAGE EXPLORATIONS ── */
+.lp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;padding:0 60px}
+.lp-card{border-radius:var(--r);overflow:hidden;cursor:pointer;position:relative;aspect-ratio:4/3;border:1px solid var(--border);transition:transform .3s ease,box-shadow .3s ease}
+.lp-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5)}.lp-card:hover img{filter:grayscale(0%)}
+.lp-card img{width:100%;height:100%;display:block;object-fit:cover;filter:grayscale(100%);transition:filter .4s ease}
+.lp-explore{border-radius:var(--r);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background-position .6s ease;background:linear-gradient(135deg,rgba(91,76,219,.08),rgba(91,76,219,.02));background-size:200% 200%;background-position:0% 0%}
+.lp-explore:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5);border-color:rgba(91,76,219,.3);background-position:100% 100%}
+.lp-explore-icon{font-size:36px;margin-bottom:12px;color:var(--accent)}
+.lp-explore-text{font-family:'Satoshi',sans-serif;font-size:18px;font-weight:700;color:var(--text);letter-spacing:-.2px;margin-bottom:6px}
+.lp-explore-sub{font-size:13px;color:var(--muted)}
+/* ── EXPLORE ALL PAGE ── */
+#page-explore .cs-body{max-width:none;padding:76px 60px 0}
+.explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.explore-grid .auto-scroll-card{flex:none;width:100%;height:clamp(300px,40vh,480px)}
+@media(max-width:768px){.lp-grid{grid-template-columns:repeat(2,1fr)}.explore-grid{grid-template-columns:repeat(2,1fr)}#page-explore .cs-body{padding:52px 20px 0}}
+@media(max-width:480px){.lp-grid{grid-template-columns:1fr}.explore-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -448,6 +464,18 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
     <div class="pcard" onclick="showCase('bladeroom')"><div class="pimg"><img src="assets/bladeroom/Cover.png" alt="BladeRoom"></div><div class="pbtn-wrap"><div class="pname">BladeRoom</div><p class="pdesc">AI-powered hairstyle discovery &amp; booking platform with virtual TryOn.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
     <div class="pcard" onclick="showCase('gloroq')"><div class="pimg"><img src="assets/gloroq/Creator's dashboard overview.jpg" alt="Gloroq"></div><div class="pbtn-wrap"><div class="pname">Gloroq</div><p class="pdesc">Global gaming competition platform with dual dashboards &amp; accessibility-first color system.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
     <div class="pcard" onclick="showCase('uvs')"><div class="pimg"><img src="assets/uvs/Barber Profile Webpage.jpg" alt="UVS"></div><div class="pbtn-wrap"><div class="pname">UVS</div><p class="pdesc">Multi-entity barbering platform with 3 onboarding paths, dark mode &amp; admin dashboard.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
+  </div>
+</section>
+
+<section id="landing-pages">
+  <div class="reveal"><div class="eyebrow">Design Practice</div><h2 class="sec-title">Landing Page Explorations.</h2><p class="sec-desc">10+ builds across random niches. Some polished, some just testing an idea. All outside client work.</p></div>
+  <div class="lp-grid reveal">
+    <div class="lp-card" onclick="showExplore()"><img src="assets/LandingPageAssets/Mockups/VELO Mockup.png" alt="VELO"></div>
+    <div class="lp-card" onclick="showExplore()"><img src="assets/LandingPageAssets/Mockups/Perigee Mockup.png" alt="Perigee"></div>
+    <div class="lp-card" onclick="showExplore()"><img src="assets/LandingPageAssets/Mockups/Luxe Mockup.png" alt="Luxe"></div>
+    <div class="lp-card" onclick="showExplore()"><img src="assets/LandingPageAssets/Mockups/Forge Mockup.png" alt="Forge"></div>
+    <div class="lp-card" onclick="showExplore()"><img src="assets/LandingPageAssets/Mockups/Drift Mockup.png" alt="Drift"></div>
+    <div class="lp-card lp-explore" onclick="showExplore()"><div class="lp-explore-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="6" cy="6" r="3" fill="currentColor"/><circle cx="22" cy="6" r="3" fill="currentColor"/><circle cx="6" cy="22" r="3" fill="currentColor"/><circle cx="22" cy="22" r="3" fill="currentColor"/></svg></div><div class="lp-explore-text">Explore all 10+</div><div class="lp-explore-sub">View all landing page explorations</div></div>
   </div>
 </section>
 
@@ -558,18 +586,20 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <h2 class="cbh2">Key Design Decisions</h2><h3 class="cbh3">Leading with the AI feature</h3><p class="cbp">The AI face scan and TryOn is the most unique part of BladeRoom. I designed it as the <strong>primary action on the Explore Styles tab</strong> which is the first thing users see when they&rsquo;re ready to find a look, so it reads as the core of the app, not a buried feature.</p><h3 class="cbh3">Permission-based interface upgrade</h3><p class="cbp">Instead of a separate app for hairstylists, BladeRoom gives them an <strong>interface upgrade once approved</strong>. The core feels familiar, but stylist-specific tools appear naturally, reducing confusion and making onboarding seamless.</p>
 </div>
 <div class="scr-section"><div class="scr-label">Regular User Flow</div><div class="sgrid sg4">
-<div class="scrcard"><img class="mob" src="assets/bladeroom/01 - Onboarding.png" alt="Onboarding flow" onclick="openModal(this)"><div class="scrcap">Onboarding flow</div></div>
-<div class="scrcard"><img class="mob" src="assets/bladeroom/02 - Dashboard.png" alt="Home &amp; explore" onclick="openModal(this)"><div class="scrcap">Home &amp; explore</div></div>
-<div class="scrcard"><img class="mob" src="assets/bladeroom/07 - Explore Styles.png" alt="TryOn result" onclick="openModal(this)"><div class="scrcap">Low Bald Fade</div></div>
-<div class="scrcard"><img class="mob" src="assets/bladeroom/04 - Barber Profile.png" alt="Stylist profile" onclick="openModal(this)"><div class="scrcap">Stylist profile</div></div>
-<div class="scrcard"><img class="mob" src="assets/bladeroom/03 - Find Stylist.png" alt="Find Stylist" onclick="openModal(this)"><div class="scrcap">Find Stylist</div></div>
-<div class="scrcard"><img class="mob" src="assets/bladeroom/05 - Order Product.png" alt="Product ordering" onclick="openModal(this)"><div class="scrcap">Product ordering</div></div>
-<div class="scrcard"><img class="mob" src="assets/bladeroom/08 - Wallet.png" alt="In-app wallet" onclick="openModal(this)"><div class="scrcap">In-app wallet</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Onboarding.png" alt="Onboarding flow" onclick="openModal(this)"><div class="scrcap">Onboarding flow</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Client Dashboard.png" alt="Home &amp; explore" onclick="openModal(this)"><div class="scrcap">Home &amp; explore</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Find Stylist.png" alt="Find Stylist" onclick="openModal(this)"><div class="scrcap">Find Stylist</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Stylist Profiile.png" alt="Stylist profile" onclick="openModal(this)"><div class="scrcap">Stylist profile</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Style Details.png" alt="Style details" onclick="openModal(this)"><div class="scrcap">Style details</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Booking Flow.png" alt="Booking flow" onclick="openModal(this)"><div class="scrcap">Booking flow</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Booking Details.png" alt="Booking details" onclick="openModal(this)"><div class="scrcap">Booking details</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Product Page.png" alt="Product ordering" onclick="openModal(this)"><div class="scrcap">Product ordering</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Wallet.png" alt="In-app wallet" onclick="openModal(this)"><div class="scrcap">In-app wallet</div></div>
 </div></div>
 <div class="scr-section"><div class="scr-label">Hairstylist Flow</div><div class="sgrid sg4">
-<div class="scrcard"><img class="mob" src="assets/bladeroom/09 - Apply Barber.png" alt="Apply as stylist" onclick="openModal(this)"><div class="scrcap">Apply as stylist</div></div>
-<div class="scrcard"><img class="mob" src="assets/bladeroom/10 - Barber Dashboard.png" alt="Stylist home" onclick="openModal(this)"><div class="scrcap">Stylist home</div></div>
-<div class="scrcard"><img class="mob" src="assets/bladeroom/11 - Barber Schedule.png" alt="Manage appointments" onclick="openModal(this)"><div class="scrcap">Manage appointments</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Hairstylist Dashboard.png" alt="Stylist dashboard" onclick="openModal(this)"><div class="scrcap">Stylist dashboard</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Hairstylist Schedule.png" alt="Manage schedule" onclick="openModal(this)"><div class="scrcap">Manage schedule</div></div>
+<div class="scrcard"><img class="mob" src="assets/bladeroom/Hairstylist Bookings.png" alt="Manage bookings" onclick="openModal(this)"><div class="scrcap">Manage bookings</div></div>
 </div></div>
 <div class="proto-box"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-4px;margin-right:6px"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg> AI Face Scan &amp; TryOn Prototype</h3><p>Watch the AI face scan in action. Users scan their face and instantly see personalised hairstyle recommendations with a live TryOn. Fully prototyped in Figma.</p><a href="https://www.figma.com/proto/Hdnre9okOFermqghGYFYcq/ux-wireframe-practice?node-id=2455-9387&t=OgPXqhkNux4IzxGq-1" target="_blank" class="btn-g" style="display:inline-flex"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> View Live Prototype in Figma</a><div class="proto-vid" style="background:transparent;border:none;min-height:unset;display:flex;justify-content:center;padding:0"><video controls style="width:100%;max-width:320px;border-radius:20px;box-shadow:0 24px 60px rgba(0,0,0,.6)" src="assets/bladeroom/BladeRoom AI.mp4"></video></div></div>
 <div class="nxt-proj" onclick="showCase('gloroq')"><div><div class="nxt-label">Next project</div><div class="nxt-name">Gloroq</div></div><div class="nxt-arrow">&rarr;</div></div>
@@ -639,6 +669,27 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <div class="scrcard auto-scroll-card" style="flex:0 0 auto;width:clamp(280px,38vw,420px);height:clamp(300px,36vh,420px)"><div class="auto-scroll-img"><img src="assets/uvs/Barber Profile Webpage.jpg" alt="Barber Profile Webpage" onclick="openModal(this)"></div><div class="cs-overlay-cap">Barber Profile Webpage</div></div>
 </div></div>
 <div class="nxt-proj" onclick="showCase('bladeroom')"><div><div class="nxt-label">Back to first project</div><div class="nxt-name">BladeRoom</div></div><div class="nxt-arrow">&rarr;</div></div>
+<footer><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><div class="fcopy"><span>&copy; 2026 Marvix</span></div></footer>
+</div>
+
+<!-- EXPLORE ALL LANDING PAGES -->
+<div class="page" id="page-explore">
+<nav class="cs-nav"><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><button class="back-btn" onclick="goHome()">&larr; Back to portfolio</button></nav>
+<div class="cs-hero"><div class="cs-orb"></div><div class="eyebrow">Design Practice</div><h1 class="cs-title">Landing Page Explorations</h1><p class="cs-desc">10+ builds across random niches. Some polished, some just testing an idea. All outside client work.</p></div>
+<div class="cs-body">
+<div class="explore-grid">
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/VELO Page.png" alt="VELO" onclick="openModal(this)"></div><div class="cs-overlay-cap">VELO</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Perigee Page.png" alt="Perigee" onclick="openModal(this)"></div><div class="cs-overlay-cap">Perigee</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Luxe Page.png" alt="Luxe" onclick="openModal(this)"></div><div class="cs-overlay-cap">Luxe</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Haven Page.png" alt="Haven" onclick="openModal(this)"></div><div class="cs-overlay-cap">Haven</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Forge Page.png" alt="Forge" onclick="openModal(this)"></div><div class="cs-overlay-cap">Forge</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Focus Page.png" alt="Focus" onclick="openModal(this)"></div><div class="cs-overlay-cap">Focus</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Drift Page.png" alt="Drift" onclick="openModal(this)"></div><div class="cs-overlay-cap">Drift</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Bladeroom Page.png" alt="Bladeroom" onclick="openModal(this)"></div><div class="cs-overlay-cap">Bladeroom</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Aurum Page.png" alt="Aurum" onclick="openModal(this)"></div><div class="cs-overlay-cap">Aurum</div></div>
+<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Arch-X Page.png" alt="Arch-X" onclick="openModal(this)"></div><div class="cs-overlay-cap">Arch-X</div></div>
+</div>
+</div>
 <footer><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><div class="fcopy"><span>&copy; 2026 Marvix</span></div></footer>
 </div>
 
@@ -754,6 +805,19 @@ function goHome(){
     window.scrollTo({top:0});
   }
 }
+function showExplore(){
+  var currentPage=document.querySelector('.page.active');
+  scrollRestore=window.scrollY;
+  currentPage.classList.add('leaving');
+  setTimeout(function(){
+    currentPage.classList.remove('active','leaving');
+    var next=document.getElementById('page-explore');
+    next.classList.add('active','entering');
+    window.scrollTo({top:0});
+    history.pushState({page:'explore'},'',window.location.pathname+'#explore');
+    setTimeout(function(){next.classList.remove('entering');initReveal();initAutoScroll()},400);
+  },250);
+}
 // Handle browser back/forward + refresh
 window.addEventListener('popstate',function(e){
   var page=(e.state&&e.state.page)||'home';
@@ -799,16 +863,16 @@ function dismissOnboard(){document.getElementById('modalOnboard').classList.remo
 function openModal(img){var page=img.closest('.page');modalImages=Array.from(page.querySelectorAll('.scrcard img'));modalIndex=modalImages.indexOf(img);document.getElementById('modalImg').src=img.src;document.getElementById('modalImg').alt=img.alt;document.getElementById('modalCaption').textContent=img.alt;document.getElementById('imgModal').classList.add('open');document.body.style.overflow='hidden';resetZoom();showOnboard()}
 function closeImgModal(){document.getElementById('imgModal').classList.remove('open');document.body.style.overflow='';resetZoom()}
 function modalNav(dir){modalIndex=(modalIndex+dir+modalImages.length)%modalImages.length;document.getElementById('modalImg').src=modalImages[modalIndex].src;document.getElementById('modalCaption').textContent=modalImages[modalIndex].alt;resetZoom()}
-document.getElementById('imgModal').addEventListener('click',function(e){if(e.target===this||e.target===document.getElementById('modalInner'))closeImgModal()});
-document.addEventListener('keydown',function(e){if(!document.getElementById('imgModal').classList.contains('open'))return;if(e.key==='Escape')closeImgModal();if(e.key==='ArrowRight')modalNav(1);if(e.key==='ArrowLeft')modalNav(-1);if(e.key==='+'||e.key==='='){zoomLevel=Math.min(zoomLevel+.3,5);applyTransform()}if(e.key==='-'){zoomLevel=Math.max(zoomLevel-.3,1);if(zoomLevel===1){translateX=0;translateY=0;}applyTransform()}});
-document.getElementById('imgModal').addEventListener('wheel',function(e){e.preventDefault();var delta=e.deltaY>0?-0.15:0.15;zoomLevel=Math.min(Math.max(zoomLevel+delta,1),5);if(zoomLevel===1){translateX=0;translateY=0;}applyTransform()},{passive:false});
+document.getElementById('imgModal').addEventListener('click',function(e){});
+document.addEventListener('keydown',function(e){if(!document.getElementById('imgModal').classList.contains('open'))return;if(e.key==='Escape')closeImgModal();if(e.key==='ArrowRight')modalNav(1);if(e.key==='ArrowLeft')modalNav(-1);if(e.key==='+'||e.key==='='){zoomLevel=Math.min(zoomLevel+.3,10);applyTransform()}if(e.key==='-'){zoomLevel=Math.max(zoomLevel-.3,1);if(zoomLevel===1){translateX=0;translateY=0;}applyTransform()}});
+document.getElementById('imgModal').addEventListener('wheel',function(e){e.preventDefault();var delta=e.deltaY>0?-0.15:0.15;var img=document.getElementById('modalImg');var rect=img.getBoundingClientRect();var mx=e.clientX-(rect.left+rect.width/2);var my=e.clientY-(rect.top+rect.height/2);var oldScale=zoomLevel;zoomLevel=Math.min(Math.max(zoomLevel+delta,1),10);if(zoomLevel===1){translateX=0;translateY=0}else{var factor=1-zoomLevel/oldScale;translateX=mx*factor+translateX;translateY=my*factor+translateY}applyTransform()},{passive:false});
 var modalInner=document.getElementById('modalInner');
 modalInner.addEventListener('mousedown',function(e){if(zoomLevel<=1)return;isDragging=true;dragStartX=e.clientX-translateX;dragStartY=e.clientY-translateY;modalInner.classList.add('grabbing')});
 document.addEventListener('mousemove',function(e){if(!isDragging)return;translateX=e.clientX-dragStartX;translateY=e.clientY-dragStartY;applyTransform()});
 document.addEventListener('mouseup',function(){isDragging=false;modalInner.classList.remove('grabbing')});
 var lastTap=0,initDist=0,initZoom=1,touchStartX=0,touchStartY=0;
 modalInner.addEventListener('touchstart',function(e){if(e.touches.length===2){initDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);initZoom=zoomLevel}else if(e.touches.length===1){var now=Date.now();if(now-lastTap<300){if(zoomLevel>1){resetZoom()}else{zoomLevel=2.5;applyTransform()}}lastTap=now;touchStartX=e.touches[0].clientX-translateX;touchStartY=e.touches[0].clientY-translateY}},{passive:true});
-modalInner.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var dist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);zoomLevel=Math.min(Math.max(initZoom*(dist/initDist),1),5);applyTransform()}else if(e.touches.length===1&&zoomLevel>1){e.preventDefault();translateX=e.touches[0].clientX-touchStartX;translateY=e.touches[0].clientY-touchStartY;applyTransform()}},{passive:false});
+modalInner.addEventListener('touchmove',function(e){if(e.touches.length===2){e.preventDefault();var dist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);zoomLevel=Math.min(Math.max(initZoom*(dist/initDist),1),10);applyTransform()}else if(e.touches.length===1&&zoomLevel>1){e.preventDefault();translateX=e.touches[0].clientX-touchStartX;translateY=e.touches[0].clientY-touchStartY;applyTransform()}},{passive:false});
 function openCV(){document.getElementById('cvModal').classList.add('open');document.body.style.overflow='hidden'}
 function closeCV(){document.getElementById('cvModal').classList.remove('open');document.body.style.overflow=''}
 function closeCvModal(e){if(e.target===document.getElementById('cvModal'))closeCV()}
@@ -926,8 +990,9 @@ function initAutoScroll(){
       style.textContent=keyframes;
       document.head.appendChild(style);
       img.style.animation=id+' '+dur+'s ease-in-out infinite';
-      card.addEventListener('mouseenter',function(){img.style.animationPlayState='paused'});
-      card.addEventListener('mouseleave',function(){img.style.animationPlayState='running'});
+      img.style.animationPlayState='paused';
+      card.addEventListener('mouseenter',function(){img.style.animationPlayState='running'});
+      card.addEventListener('mouseleave',function(){img.style.animationPlayState='paused'});
     }
     if(img.complete&&img.offsetWidth>0)init();
     else if(img.complete)setTimeout(init,50);
