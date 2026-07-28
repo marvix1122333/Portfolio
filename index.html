@@ -72,7 +72,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .scroll-hint{font-size:14px;color:var(--muted2);display:flex;align-items:center;gap:8px;animation:float 3s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 .scroll-hint svg{width:16px;height:16px;color:var(--accent)}
-section{padding:80px 60px}
+section{padding:80px 160px}
 .eyebrow{font-size:13px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
 .sec-title{font-size:clamp(36px,5vw,64px);margin-bottom:18px;color:var(--text);line-height:1.05}
 .sec-desc{color:var(--muted);font-size:16px;line-height:1.6;max-width:480px;font-weight:300}
@@ -102,8 +102,8 @@ section{padding:80px 60px}
 .pcard{min-width:320px;flex:1;scroll-snap-align:start;border-radius:var(--r);overflow:hidden;cursor:pointer;transition:all .35s;position:relative}
 .pcard:hover{transform:translateY(-4px)}
 .pimg{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--bg2)}
-.pimg img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s ease,filter .5s ease;filter:grayscale(1)}
-.pcard:hover .pimg img{transform:scale(1.04);filter:grayscale(0)}
+.pimg img,.pimg video{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .5s ease,filter .5s ease;filter:grayscale(1)}
+.pcard:hover .pimg img,.pcard:hover .pimg video{transform:scale(1.04);filter:grayscale(0)}
 .pimg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7) 100%);pointer-events:none;transition:background .4s ease}
 .pcard:hover .pimg::after{background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.55) 100%)}
 .pname{font-family:'Satoshi',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:0}
@@ -198,10 +198,10 @@ section{padding:80px 60px}
 .avail-dot{width:7px;height:7px;background:#72e85a;border-radius:50%;animation:pulse 2s ease infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .con-text{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:32px;font-weight:300}
-.cemail{font-family:'Satoshi',sans-serif;font-size:clamp(18px,2.5vw,28px);font-weight:700;color:var(--text);display:inline-block;margin:0 0 8px;padding:18px 36px;border:1px solid var(--border);border-radius:120px;transition:all .25s;background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.02) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.cemail{font-family:'Satoshi',sans-serif;font-size:clamp(18px,2.5vw,28px);font-weight:700;color:rgba(91,76,219,.6);display:inline-block;margin:0 0 8px;padding:18px 36px;border:1px solid var(--border);border-radius:120px;transition:all .25s;background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.02) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
 .cemail:hover{border-color:var(--accent);color:var(--accent)}
 .socials{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
-.sbtn{color:var(--muted);font-size:14px;font-weight:500;padding:10px 20px;border:1px solid var(--border);border-radius:120px;transition:all .2s;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.03)}
+.sbtn{color:rgba(255,255,255,.7);font-size:14px;font-weight:500;padding:10px 20px;border:1px solid var(--border);border-radius:120px;transition:all .2s;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.03)}
 .sbtn:hover{color:var(--text);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.06)}
 footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:var(--bg)}
 .fcopy{font-size:13px;color:var(--muted2)}
@@ -367,6 +367,10 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 @media(max-width:480px){.cs-hero{padding:90px 16px 48px}.cs-title{font-size:36px;letter-spacing:-.01em}.pgrid{grid-template-columns:1fr;gap:12px}.sg4{grid-template-columns:repeat(2,1fr)}.sg2{grid-template-columns:1fr}.cs-nav{padding:0 16px}}
 @media(max-width:900px) and (min-width:769px){.cs-nav{padding:0 36px}.cs-hero{padding:108px 36px 60px}.cs-body{padding:60px 36px}.scr-section{padding:0 36px 60px}.nxt-proj{margin:0 36px 60px}.proto-box{margin:0 36px 60px}}
 /* ── LANDING PAGE EXPLORATIONS ── */
+.lp-sub-row{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.lp-seeall{display:none;font-size:14px;font-weight:500;color:var(--muted);align-items:center;gap:6px;cursor:pointer;transition:color .2s;white-space:nowrap;text-decoration:none}
+.lp-seeall:active{color:var(--accent);text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+.lp-seeall:hover{color:var(--text)}
 .lp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;padding:0 60px}
 .lp-card{border-radius:var(--r);overflow:hidden;cursor:pointer;position:relative;aspect-ratio:4/3;border:1px solid var(--border);transition:transform .3s ease,box-shadow .3s ease}
 .lp-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.5)}.lp-card:hover img{filter:grayscale(0%)}
@@ -380,8 +384,9 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 #page-explore .cs-body{max-width:none;padding:76px 60px 0}
 .explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .explore-grid .auto-scroll-card{flex:none;width:100%;height:clamp(300px,40vh,480px)}
-@media(max-width:768px){.lp-grid{grid-template-columns:repeat(2,1fr)}.explore-grid{grid-template-columns:repeat(2,1fr)}#page-explore .cs-body{padding:52px 20px 0}}
-@media(max-width:480px){.lp-grid{grid-template-columns:1fr}.explore-grid{grid-template-columns:1fr}}
+.explore-grid .explore-divider{display:none}
+@media(max-width:768px){.lp-grid{display:flex;gap:14px;padding:0 20px;margin-top:28px;overflow-x:auto;scroll-snap-type:x mandatory;-ms-overflow-style:none;scrollbar-width:none}.lp-grid::-webkit-scrollbar{display:none}.lp-card{flex:0 0 70vw;scroll-snap-align:start;aspect-ratio:4/3}.lp-sub-row{flex-direction:column;align-items:flex-start;gap:10px}.lp-seeall{display:inline-flex;font-size:13px}.explore-grid{grid-template-columns:repeat(2,1fr);gap:16px}#page-explore .cs-body{padding:52px 20px 0}.explore-grid .explore-divider{display:block;grid-column:1/-1;height:1px;background:var(--border);margin:4px 0}.explore-grid .cs-overlay-cap{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:linear-gradient(transparent,rgba(0,0,0,.6))}}
+@media(max-width:480px){.lp-card{flex:0 0 80vw}.lp-grid{gap:12px;padding:0 16px}.explore-grid{grid-template-columns:1fr;gap:0}#page-explore .cs-body{padding:44px 16px 0}.explore-grid .explore-divider{display:block;height:1px;background:var(--border);margin:28px 0}}
 </style>
 </head>
 <body>
@@ -462,13 +467,14 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
   </div>
   <div class="projects-scroll reveal">
     <div class="pcard" onclick="showCase('bladeroom')"><div class="pimg"><img src="assets/bladeroom/Cover.png" alt="BladeRoom"></div><div class="pbtn-wrap"><div class="pname">BladeRoom</div><p class="pdesc">AI-powered hairstyle discovery &amp; booking platform with virtual TryOn.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
-    <div class="pcard" onclick="showCase('gloroq')"><div class="pimg"><img src="assets/gloroq/Creator's dashboard overview.jpg" alt="Gloroq"></div><div class="pbtn-wrap"><div class="pname">Gloroq</div><p class="pdesc">Global gaming competition platform with dual dashboards &amp; accessibility-first color system.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
-    <div class="pcard" onclick="showCase('uvs')"><div class="pimg"><img src="assets/uvs/Barber Profile Webpage.jpg" alt="UVS"></div><div class="pbtn-wrap"><div class="pname">UVS</div><p class="pdesc">Multi-entity barbering platform with 3 onboarding paths, dark mode &amp; admin dashboard.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
+    <div class="pcard" onclick="showCase('gloroq')"><div class="pimg"><video src="assets/gloroq/cover.mp4" autoplay muted loop playsinline></video></div><div class="pbtn-wrap"><div class="pname">Gloroq</div><p class="pdesc">Global gaming competition platform with dual dashboards &amp; accessibility-first color system.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
+    <div class="pcard" onclick="showCase('uvs')"><div class="pimg"><img src="assets/uvs/Cover Image.png" alt="UVS"></div><div class="pbtn-wrap"><div class="pname">UVS</div><p class="pdesc">Multi-entity barbering platform with 3 onboarding paths, dark mode &amp; admin dashboard.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
   </div>
 </section>
 
 <section id="landing-pages">
-  <div class="reveal"><div class="eyebrow">Design Practice</div><h2 class="sec-title">Landing Page Explorations.</h2><p class="sec-desc">10+ builds across random niches. Some polished, some just testing an idea. All outside client work.</p></div>
+  <div class="reveal"><div class="eyebrow">Design Practice</div><h2 class="sec-title">Landing Page Explorations.</h2></div>
+  <div class="lp-sub-row reveal"><p class="sec-desc">10+ builds across random niches. Some polished, some just testing an idea. All outside client work.</p><div class="lp-seeall" onclick="showExplore()">See all <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
   <div class="lp-grid reveal">
     <div class="lp-card" onclick="showExplore()"><img src="assets/LandingPageAssets/Mockups/VELO Mockup.png" alt="VELO"></div>
     <div class="lp-card" onclick="showExplore()"><img src="assets/LandingPageAssets/Mockups/Perigee Mockup.png" alt="Perigee"></div>
@@ -613,18 +619,17 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <div class="cs-body">
 <h2 class="cbh2">Why this needed two dashboards, not one</h2><p class="cbp">Gaming competitions are fragmented, with no unified place to discover tournaments, join teams, or manage an event once it&rsquo;s created. Creators in particular spend long stretches on screen running their competitions, so the experience needed to feel comfortable over hours of use, not just usable.</p><h2 class="cbh2">The Solution</h2><p class="cbp">Gloroq is a desktop platform where you can browse and join tournaments, build a team, or create your own competition and run it as a creator. Creators switch into a separate dashboard to manage the competitions they&rsquo;re running, kept visually distinct from the regular gamer view so it&rsquo;s always clear which mode you&rsquo;re in, whether you&rsquo;re playing or hosting.</p><h3 class="cbh3">Dual dashboard system</h3><p class="cbp">Users have a standard audience/gamer dashboard. Creators switch into a separate creator mode with a <strong>distinct theme color</strong>, making it immediately clear which mode they&rsquo;re in and preventing confusion between the two experiences.</p>
 </div>
-<div class="scr-section"><div class="scr-label">Audience &amp; Gamer View</div><div class="sgrid sg2">
-<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Choose games after Registration.png" alt="Home: explore competitions" onclick="openModal(this)"></div><div class="cs-overlay-cap">Pick a Game</div></div>
-<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Michael james ticket Message.jpg" alt="Opened Ticket" onclick="openModal(this)"></div><div class="cs-overlay-cap">Opened Ticket</div></div>
-<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Teams.jpg" alt="Join or browse teams" onclick="openModal(this)"></div><div class="cs-overlay-cap">Join or browse teams</div></div>
-<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/dashboard-existing user.jpg" alt="Personal dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Personal dashboard</div></div>
+<div class="scr-section"><div class="scr-label">Users</div><div class="sgrid sg3">
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img src="assets/gloroq/dashboard-existing user.png" alt="Dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Dashboard</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img src="assets/gloroq/User - Teams.png" alt="Teams" onclick="openModal(this)"></div><div class="cs-overlay-cap">Teams</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img src="assets/gloroq/User - View Joined Competitions.png" alt="Joined Competition" onclick="openModal(this)"></div><div class="cs-overlay-cap">Joined Competition</div></div>
 </div></div>
-<div class="scr-section"><div class="scr-label">Creator Dashboard</div><div class="sgrid sg2">
-<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Creator's dashboard overview.jpg" alt="Creator home, different theme" onclick="openModal(this)"></div><div class="cs-overlay-cap">Creator home, different theme</div></div>
-<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Creator-Competition Created.png" alt="Create a competition" onclick="openModal(this)"></div><div class="cs-overlay-cap">Competition Created Successfully</div></div>
-<div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/gloroq/Creeator-Manage competition.jpg" alt="Manage team" onclick="openModal(this)"></div><div class="cs-overlay-cap">Manage Team</div></div>
+<div class="scr-section"><div class="scr-label">Creators</div><div class="sgrid sg3">
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img src="assets/gloroq/Creator's dashboard overview.png" alt="Dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Dashboard</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img src="assets/gloroq/Creator's dashboard - Create competition - Step 1.png" alt="Create Competition" onclick="openModal(this)"></div><div class="cs-overlay-cap">Create Competition</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img src="assets/gloroq/Creator's dashboard - Manage competition.png" alt="Manage Competition" onclick="openModal(this)"></div><div class="cs-overlay-cap">Manage Competition</div></div>
 </div></div>
-<div class="scr-section" style="max-width:70%;margin:0 auto 72px;padding:0"><div class="scr-label" style="justify-content:center">Admin Dashboard</div><div class="sgrid sg1"><div class="scrcard auto-scroll-card" style="height:clamp(620px,73vh,870px)"><div class="auto-scroll-img"><img src="assets/gloroq/Admin dashboard - Overview.png" alt="Admin dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin dashboard</div></div></div></div>
+<div class="scr-section" style="max-width:70%;margin:0 auto 72px;padding:0"><div class="scr-label" style="justify-content:center">Admin Dashboard</div><div class="sgrid sg1"><div class="scrcard auto-scroll-card" data-scroll-dur="2" style="height:clamp(620px,73vh,870px)"><div class="auto-scroll-img"><img src="assets/gloroq/Admin dashboard - Overview.png" alt="Admin dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin dashboard</div></div></div></div>
 <div class="nxt-proj" onclick="showCase('uvs')"><div><div class="nxt-label">Next project</div><div class="nxt-name">UVS</div></div><div class="nxt-arrow">&rarr;</div></div>
 <footer><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><div class="fcopy"><span>&copy; 2026 Marvix</span></div></footer>
 </div>
@@ -637,36 +642,35 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <h2 class="cbh2">One platform, three completely different users</h2><p class="cbp">Before UVS, finding a trustworthy barber was mostly guesswork if not impossible, worse for anyone who&rsquo;d just relocated and had no local recommendations to go on. Barbers had the opposite problem: no real way to open up to more clients beyond who happened to find them through word of mouth. And a third case had almost no infrastructure at all, organisations booking a barber for their staff ahead of an event, a use case that&rsquo;s still uncommon in Africa but real enough that it needed its own flow rather than being forced into the individual-client experience.</p><h2 class="cbh2">The Solution</h2><p class="cs-sub" style="font-size:14px;color:var(--muted);margin-top:-12px;margin-bottom:20px;font-style:italic;">Working from the client&rsquo;s PRD, three distinct problems became clear</p><p class="cbp">UVS solves this with three separate onboarding paths chosen at the very start of sign-up. Clients get a dedicated space to find and vet barbers instead of relying on guesswork. Barbers get tools to manage a real client base and schedule, beyond whoever finds them by chance. Entities get a flow built specifically for booking barbers for a group, like staff for an event, anyone they&rsquo;re arranging on someone else&rsquo;s behalf. Once a user selects their type, they enter a completely tailored experience, with nothing overlapping between the three.</p><h3 class="cbh3">Dark mode design system</h3><p class="cbp">UVS was built with a full dark mode design system, not just a colour toggle, but a complete rethink of contrast, depth, and hierarchy for low-light environments. The admin dashboard extends this to desktop scale.</p>
 </div>
 <div class="scr-section"><div class="scr-label">Client Flow</div><div class="sgrid sg4">
-<div class="scrcard"><img class="mob" src="assets/uvs/Client - Onboarding.png" alt="Client Onboarding" onclick="openModal(this)"><div class="scrcap">Client Onboarding</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Client - Home.png" alt="Client Home" onclick="openModal(this)"><div class="scrcap">Client Home</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Client - Find Barbers.png" alt="Find Barbers" onclick="openModal(this)"><div class="scrcap">Find Barbers</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Client Onboarding.png" alt="Client Onboarding" onclick="openModal(this)"><div class="scrcap">Client Onboarding</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Client Dashboard.png" alt="Client Dashboard" onclick="openModal(this)"><div class="scrcap">Client Dashboard</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Client - Find Barber.png" alt="Find Barber" onclick="openModal(this)"><div class="scrcap">Find Barber</div></div>
 <div class="scrcard"><img class="mob" src="assets/uvs/Client - Barber Profile.png" alt="Barber Profile" onclick="openModal(this)"><div class="scrcap">Barber Profile</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Client - Booked Appointment.png" alt="Booked Appointment" onclick="openModal(this)"><div class="scrcap">Booked Appointment</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Booking Complete.png" alt="Booking Complete" onclick="openModal(this)"><div class="scrcap">Booking Complete</div></div>
 </div></div>
 <div class="scr-section"><div class="scr-label">Barber Flow</div><div class="sgrid sg4">
-<div class="scrcard"><img class="mob" src="assets/uvs/Barber - Onboarding.png" alt="Barber Onboarding" onclick="openModal(this)"><div class="scrcap">Barber Onboarding</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Barber - Home.png" alt="Barber Home" onclick="openModal(this)"><div class="scrcap">Barber Home</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Barber - Schedule.png" alt="Barber Schedule" onclick="openModal(this)"><div class="scrcap">Barber Schedule</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Barber - Contract.png" alt="Barber Contract" onclick="openModal(this)"><div class="scrcap">Barber Contract</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Barber Onboarding.png" alt="Barber Onboarding" onclick="openModal(this)"><div class="scrcap">Barber Onboarding</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Barber Dashboard.png" alt="Barber Dashboard" onclick="openModal(this)"><div class="scrcap">Barber Dashboard</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Barber - Booking Details.png" alt="Booking Details" onclick="openModal(this)"><div class="scrcap">Booking Details</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Barber Contract.png" alt="Barber Contract" onclick="openModal(this)"><div class="scrcap">Barber Contract</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Barber Wallet.png" alt="Barber Wallet" onclick="openModal(this)"><div class="scrcap">Barber Wallet</div></div>
 </div></div>
 <div class="scr-section"><div class="scr-label">Entity Flow</div><div class="sgrid sg4">
-<div class="scrcard"><img class="mob" src="assets/uvs/Entity - Onboarding.png" alt="Entity Onboarding" onclick="openModal(this)"><div class="scrcap">Entity Onboarding</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Entity - Home.png" alt="Entity Home" onclick="openModal(this)"><div class="scrcap">Entity Home</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Entity Onboarding.png" alt="Entity Onboarding" onclick="openModal(this)"><div class="scrcap">Entity Onboarding</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Entity Dashboard.png" alt="Entity Dashboard" onclick="openModal(this)"><div class="scrcap">Entity Dashboard</div></div>
 <div class="scrcard"><img class="mob" src="assets/uvs/Entity - Analytics.png" alt="Entity Analytics" onclick="openModal(this)"><div class="scrcap">Entity Analytics</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Entity - Contract Details.png" alt="Entity Contract Details" onclick="openModal(this)"><div class="scrcap">Entity Contract Details</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Enitity - Contract Details.png" alt="Contract Details" onclick="openModal(this)"><div class="scrcap">Contract Details</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Entity Contract Status.png" alt="Contract Status" onclick="openModal(this)"><div class="scrcap">Contract Status</div></div>
 </div></div>
 <div class="scr-section"><div class="scr-label">Dark Mode</div><div class="sgrid sg3">
-<div class="scrcard"><img class="mob" src="assets/uvs/Client Home Darkmode.png" alt="Client Dark Mode" onclick="openModal(this)"><div class="scrcap">Client Dark Mode</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Barber Home Darkmode.png" alt="Barber Dark Mode" onclick="openModal(this)"><div class="scrcap">Barber Dark Mode</div></div>
-<div class="scrcard"><img class="mob" src="assets/uvs/Entity Home Darkmode.png" alt="Entity Dark Mode" onclick="openModal(this)"><div class="scrcap">Entity Dark Mode</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Client Dark Mode.png" alt="Client Dark Mode" onclick="openModal(this)"><div class="scrcap">Client Dark Mode</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Barber Dark Mode.png" alt="Barber Dark Mode" onclick="openModal(this)"><div class="scrcap">Barber Dark Mode</div></div>
+<div class="scrcard"><img class="mob" src="assets/uvs/Entity Dark Mode.png" alt="Entity Dark Mode" onclick="openModal(this)"><div class="scrcap">Entity Dark Mode</div></div>
 </div></div>
 <div class="scr-section"><div class="scr-label">Admin Dashboard</div><div class="sgrid sg2">
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/uvs/Super Admin Dashboard.png" alt="Super Admin Dashboard" onclick="openModal(this)"></div><div class="cs-overlay-cap">Super Admin Dashboard</div></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/uvs/Admin Dashboard - Users.png" alt="Admin Users" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin, Users</div></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/uvs/Admin Create Account.png" alt="Admin Create Account" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin, Create Account</div></div>
-</div></div>
-<div class="scr-section"><div class="scr-label">Barber Profile Web</div><p class="cbp" style="margin-bottom:20px;max-width:clamp(320px,42vw,500px)">Beyond the app, each barber gets a customisable personal webpage they can share with clients or use for their own advertising, editorial, brandable, and built with room for the UVS team to expand it further down the line.</p><div class="sgrid sg2">
-<div class="scrcard auto-scroll-card" style="flex:0 0 auto;width:clamp(280px,38vw,420px);height:clamp(300px,36vh,420px)"><div class="auto-scroll-img"><img src="assets/uvs/Barber Profile Webpage.jpg" alt="Barber Profile Webpage" onclick="openModal(this)"></div><div class="cs-overlay-cap">Barber Profile Webpage</div></div>
 </div></div>
 <div class="nxt-proj" onclick="showCase('bladeroom')"><div><div class="nxt-label">Back to first project</div><div class="nxt-name">BladeRoom</div></div><div class="nxt-arrow">&rarr;</div></div>
 <footer><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><div class="fcopy"><span>&copy; 2026 Marvix</span></div></footer>
@@ -679,14 +683,23 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <div class="cs-body">
 <div class="explore-grid">
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/VELO Page.png" alt="VELO" onclick="openModal(this)"></div><div class="cs-overlay-cap">VELO</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Perigee Page.png" alt="Perigee" onclick="openModal(this)"></div><div class="cs-overlay-cap">Perigee</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Luxe Page.png" alt="Luxe" onclick="openModal(this)"></div><div class="cs-overlay-cap">Luxe</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Haven Page.png" alt="Haven" onclick="openModal(this)"></div><div class="cs-overlay-cap">Haven</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Forge Page.png" alt="Forge" onclick="openModal(this)"></div><div class="cs-overlay-cap">Forge</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Focus Page.png" alt="Focus" onclick="openModal(this)"></div><div class="cs-overlay-cap">Focus</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Drift Page.png" alt="Drift" onclick="openModal(this)"></div><div class="cs-overlay-cap">Drift</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Bladeroom Page.png" alt="Bladeroom" onclick="openModal(this)"></div><div class="cs-overlay-cap">Bladeroom</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Aurum Page.png" alt="Aurum" onclick="openModal(this)"></div><div class="cs-overlay-cap">Aurum</div></div>
+<div class="explore-divider"></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img src="assets/LandingPageAssets/Pages/Arch-X Page.png" alt="Arch-X" onclick="openModal(this)"></div><div class="cs-overlay-cap">Arch-X</div></div>
 </div>
 </div>
@@ -983,16 +996,26 @@ function initAutoScroll(){
       if(!img.naturalWidth||!img.offsetWidth)return;
       var naturalH=img.naturalHeight*(img.offsetWidth/img.naturalWidth)-card.offsetHeight;
       if(naturalH<=0)return;
-      var dur=12;
+      var dur=parseInt(card.dataset.scrollDur)||2;
       var id='autoScroll'+Math.random().toString(36).substr(2,5);
       var keyframes='@keyframes '+id+'{0%{transform:translateY(0)}50%{transform:translateY(-'+naturalH+'px)}100%{transform:translateY(0)}}';
       var style=document.createElement('style');
       style.textContent=keyframes;
       document.head.appendChild(style);
-      img.style.animation=id+' '+dur+'s ease-in-out infinite';
-      img.style.animationPlayState='paused';
-      card.addEventListener('mouseenter',function(){img.style.animationPlayState='running'});
-      card.addEventListener('mouseleave',function(){img.style.animationPlayState='paused'});
+      img.style.animation=id+' '+dur+'s ease-in-out infinite paused';
+      card.addEventListener('mouseenter',function(){img.style.transition='';img.style.animation=id+' '+dur+'s ease-in-out infinite';img.style.animationPlayState='running'});
+      card.addEventListener('mouseleave',function(){
+        img.style.animationPlayState='paused';
+        var cur=img.getBoundingClientRect();
+        var cardRect=card.getBoundingClientRect();
+        var curY=cur.top-cardRect.top;
+        img.style.animation='none';
+        img.style.transform='translateY('+curY+'px)';
+        img.offsetHeight;
+        img.style.transition='transform .6s cubic-bezier(.4,0,.2,1)';
+        img.style.transform='translateY(0)';
+        setTimeout(function(){img.style.transition=''},650);
+      });
     }
     if(img.complete&&img.offsetWidth>0)init();
     else if(img.complete)setTimeout(init,50);
