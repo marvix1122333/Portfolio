@@ -7,6 +7,8 @@
 <link rel="icon" type="image/png" href="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png">
 <meta name="description" content="Product Designer crafting mobile apps and dashboard platforms for complex, multi-user products.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
@@ -21,7 +23,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:1000;transition:width .1s;width:0}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(0,0,0,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);animation:navSlideDown .5s ease both}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(8,8,8,.96);border-bottom:1px solid var(--border);animation:navSlideDown .5s ease both}
 @keyframes navSlideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
 .nav-logo{animation:navItemIn .5s .15s ease both}
 .nav-links li{animation:navItemIn .4s ease both}
@@ -57,7 +59,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-left{width:640px;flex-shrink:0;position:relative;z-index:2}
 .hero-right{position:absolute;right:0;top:50%;transform:translateY(-50%);width:48%;height:520px;border-radius:var(--r) 0 0 var(--r);overflow:hidden;background:#000;z-index:1}
 .hero-right canvas{width:100%!important;height:100%!important;display:block}
-.hero-spotlight{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none;z-index:3;transform:translate(-50%,-50%);opacity:0;transition:opacity .4s ease;filter:blur(30px)}
+.hero-spotlight{position:absolute;left:0;top:0;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none;z-index:3;transform:translate3d(0,0,0);opacity:0;transition:opacity .4s ease}
 .hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
 .hero h1{font-size:clamp(52px,5.5vw,72px);line-height:1.08;margin-bottom:28px;color:var(--text);letter-spacing:-.03em;font-weight:400}
 .hero h1 .accent{color:var(--accent)}
@@ -109,8 +111,8 @@ section{padding:80px 160px}
 .pname{font-family:'Satoshi',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:0}
 .pdesc{font-size:13px;color:rgba(255,255,255,.65);line-height:1.5;font-weight:300;max-width:90%;opacity:0;transform:translateY(8px);transition:all .35s ease}
 .pcard:hover .pdesc{opacity:1;transform:translateY(0)}
-.pbtn-wrap{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:2;display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:flex-end;height:0;opacity:0;overflow:hidden;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.08);transition:all .4s cubic-bezier(.4,0,.2,1)}
-.pcard:hover .pbtn-wrap{height:auto;opacity:1}
+.pbtn-wrap{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:2;display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:flex-end;opacity:0;transform:translateY(100%);background:rgba(0,0,0,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,.08);transition:opacity .3s ease,transform .35s cubic-bezier(.4,0,.2,1)}
+.pcard:hover .pbtn-wrap{transform:translateY(0);opacity:1}
 .pbtn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-size:14px;font-weight:500;color:var(--text);border:1px solid rgba(255,255,255,.1);border-radius:120px;background:linear-gradient(180deg,rgba(255,255,255,.15) 0%,rgba(255,255,255,.05) 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 4px 16px rgba(0,0,0,.3);transition:all .25s}
 .pbtn:hover{background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.08) 100%);transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.15),0 8px 24px rgba(0,0,0,.4)}
 .work-links{display:flex;gap:24px;margin-top:32px}
@@ -216,7 +218,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 @media(max-width:480px){section{padding:64px 16px}.hero{padding:100px 16px 48px}.hero h1{font-size:48px}.hero-sub{font-size:14px}.hero-btns{flex-direction:column;align-items:stretch}.btn-g,.btn-outline{justify-content:center;width:100%}.nav-cta{padding:8px 16px;font-size:13px}nav{padding:0 16px}.about-photo{max-width:240px;margin:0 auto}.exp-card{padding:18px}.svccard{padding:20px}.svc-more{padding:20px}.svc-tag{padding:6px 12px;font-size:12px}.test-card{padding:24px}.faq-tab{padding:8px 16px;font-size:13px}.faqq{padding:16px 18px;font-size:14px}.faqa-inner{padding:0 18px 16px;font-size:14px}.pcard{min-width:240px}.pbtn-wrap{padding:16px}.pdesc{font-size:12px}.pname{font-size:16px}footer{padding:20px 16px}.tech-icon{width:22px;height:22px}.tech-grid{gap:8px}.tech-item{padding:10px;border-radius:6px}.marquee-section{padding:12px 0 24px}.marquee-item{width:110px;padding:0 10px}.marquee-item img{height:32px}.marquee-section::before,.marquee-section::after{width:35%}}
 
 /* ── CASE STUDY NAV ── */
-.cs-nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(0,0,0,.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);animation:navSlideDown .5s ease both}
+.cs-nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(8,8,8,.96);border-bottom:1px solid var(--border);animation:navSlideDown .5s ease both}
 .cs-nav .nav-logo{animation:navItemIn .5s .15s ease both}
 .cs-nav .back-btn{animation:navItemIn .4s .3s ease both}
 .back-btn{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;padding:9px 18px;border:1px solid var(--border);border-radius:120px;transition:all .2s;background:none;cursor:pointer;font-family:'Inter',sans-serif}
@@ -346,7 +348,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 .cv-edu-year{font-size:11px;color:#555;background:rgba(255,255,255,.04);padding:3px 10px;border-radius:120px}
 .cv-summary{font-size:13.5px;color:#666;line-height:1.8}
 /* ── CUSTOM CURSOR ── */
-.cursor-dot{position:fixed;width:12px;height:12px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:10002;transition:width .2s ease,height .2s ease,background .2s ease,opacity .2s ease;mix-blend-mode:difference;opacity:0}
+.cursor-dot{position:fixed;width:12px;height:12px;background:var(--accent);border-radius:50%;pointer-events:none;z-index:10002;transition:width .2s ease,height .2s ease,background .2s ease,opacity .2s ease;opacity:0;box-shadow:0 0 10px 2px rgba(91,76,219,.35)}
 .cursor-dot.visible{opacity:1}
 .cursor-dot.hovering{width:40px;height:40px;background:rgba(91,76,219,.2);border:1.5px solid rgba(255,255,255,.4);opacity:.9}
 @media(max-width:768px){.cursor-dot{display:none}}
@@ -858,11 +860,31 @@ function closeMenu(){document.getElementById('mmenu').classList.remove('open')}
 function toggleFaq(btn){var a=btn.parentElement.querySelector('.faqa');var open=btn.classList.contains('open');document.querySelectorAll('.faqq').forEach(function(b){b.classList.remove('open');var panel=b.parentElement.querySelector('.faqa');panel.style.maxHeight='0';panel.style.opacity='0'});if(!open){btn.classList.add('open');a.style.opacity='1';a.style.maxHeight=a.scrollHeight+'px'}}
 function filterFaq(cat,tabBtn){document.querySelectorAll('.faq-tab').forEach(function(t){t.classList.remove('active')});tabBtn.classList.add('active');document.querySelectorAll('.faqitem').forEach(function(item){if(cat==='all'||item.dataset.cat===cat){item.classList.remove('hidden')}else{item.classList.add('hidden')}})}
 function initReveal(){var els=document.querySelectorAll('.page.active .reveal');var obs=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('visible')},i*65);obs.unobserve(e.target)}})},{threshold:0.07});els.forEach(function(el){el.classList.remove('visible');obs.observe(el)})}
-window.addEventListener('scroll',function(){var nav=document.getElementById('mainnav');if(nav)nav.style.borderBottomColor=window.scrollY>40?'rgba(255,255,255,.15)':'rgba(255,255,255,.1)';var docH=document.documentElement.scrollHeight-window.innerHeight;var pct=docH>0?(window.scrollY/docH)*100:0;document.getElementById('scrollProgress').style.width=pct+'%';var stb=document.getElementById('scrollTop');if(stb){if(window.scrollY>600)stb.classList.add('show');else stb.classList.remove('show')}updateActiveNav()});
+var scTicking=false;
+function onScroll(){
+  scTicking=false;
+  var nav=document.getElementById('mainnav');
+  if(nav)nav.style.borderBottomColor=window.scrollY>40?'rgba(255,255,255,.15)':'rgba(255,255,255,.1)';
+  var docH=document.documentElement.scrollHeight-window.innerHeight;
+  var pct=docH>0?(window.scrollY/docH)*100:0;
+  document.getElementById('scrollProgress').style.width=pct+'%';
+  var stb=document.getElementById('scrollTop');
+  if(stb){if(window.scrollY>600)stb.classList.add('show');else stb.classList.remove('show')}
+  updateActiveNav();
+}
+window.addEventListener('scroll',function(){if(!scTicking){scTicking=true;requestAnimationFrame(onScroll)}},{passive:true});
 var navSections=['about','work','process','faq'];
-function updateActiveNav(){var btns=document.querySelectorAll('.nav-links button');var activeIdx=-1;navSections.forEach(function(id,i){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=180)activeIdx=i});document.querySelectorAll('.nav-links li').forEach(function(li,i){if(i===activeIdx)li.classList.add('active');else li.classList.remove('active')})}
+function updateActiveNav(){
+  var activeIdx=-1;
+  navSections.forEach(function(id,i){
+    var el=document.getElementById(id);
+    if(el&&el.getBoundingClientRect().top<=180)activeIdx=i;
+  });
+  var links=document.querySelectorAll('.nav-links li');
+  for(var i=0;i<links.length;i++){if(i===activeIdx)links[i].classList.add('active');else links[i].classList.remove('active')}
+}
 var cursorDot=document.getElementById('cursorDot');var cursorVisible=false;
-document.addEventListener('mousemove',function(e){if(!cursorVisible){cursorDot.classList.add('visible');cursorVisible=true}cursorDot.style.left=e.clientX-6+'px';cursorDot.style.top=e.clientY-6+'px'});
+document.addEventListener('mousemove',function(e){if(!cursorVisible){cursorDot.classList.add('visible');cursorVisible=true}cursorDot.style.transform='translate('+(e.clientX-6)+'px,'+(e.clientY-6)+'px)'});
 document.addEventListener('mouseleave',function(){cursorDot.classList.remove('visible');cursorVisible=false});
 var hoverTargets='a,button,.pcard,.sbtn,.nxt-proj,.scrcard,.faqq';
 document.addEventListener('mouseover',function(e){if(e.target.closest(hoverTargets))cursorDot.classList.add('hovering')});
@@ -900,8 +922,7 @@ if(heroSpotlight&&heroSection){
   function animSpot(){
     spotX+=(curX-spotX)*.12;
     spotY+=(curY-spotY)*.12;
-    heroSpotlight.style.left=spotX+'px';
-    heroSpotlight.style.top=spotY+'px';
+    heroSpotlight.style.transform='translate3d('+(spotX-250)+'px,'+(spotY-250)+'px,0)';
     if(raf)requestAnimationFrame(animSpot);
   }
   heroSection.addEventListener('mousemove',function(e){
@@ -916,7 +937,7 @@ if(heroSpotlight&&heroSection){
     raf=false;
   });
 }
-// Marquee - JS-driven infinite scroll with center detection
+// Marquee - infinite scroll with center detection, zero per-frame layout reads
 (function(){
   var track=document.getElementById('marqueeTrack');
   if(!track)return;
@@ -924,28 +945,40 @@ if(heroSpotlight&&heroSection){
   originals.forEach(function(it){track.appendChild(it.cloneNode(true));});
   originals.forEach(function(it){track.appendChild(it.cloneNode(true));});
   var allItems=track.querySelectorAll('.marquee-item');
-  var speed=0.8;
-  var pos=0;
-  var section=track.closest('.marquee-section');
+  var L=allItems.length;
+  var speed=0.8,pos=0,pitch=0,trackLeft=0;
+  function measure(){
+    if(L<2)return;
+    var r0=allItems[0].getBoundingClientRect();
+    var r1=allItems[1].getBoundingClientRect();
+    pitch=r1.left-r0.left;
+    trackLeft=track.getBoundingClientRect().left;
+  }
+  measure();
+  window.addEventListener('resize',measure);
+  var cur=-1,rafId=null;
   function tick(){
     pos-=speed;
-    var firstW=allItems[0].getBoundingClientRect().width;
-    if(Math.abs(pos)>=firstW*originals.length){pos+=firstW*originals.length;}
+    var wrap=pitch*originals.length;
+    if(Math.abs(pos)>=wrap)pos+=wrap;
     track.style.transform='translateX('+pos+'px)';
-    var sectionRect=section.getBoundingClientRect();
-    var cx=sectionRect.left+sectionRect.width/2;
-    var closest=null,minDist=Infinity;
-    allItems.forEach(function(it){
-      var r=it.getBoundingClientRect();
-      var icx=r.left+r.width/2;
-      var d=Math.abs(icx-cx);
-      if(d<minDist){minDist=d;closest=it;}
-    });
-    allItems.forEach(function(it){it.classList.remove('center');});
-    if(closest)closest.classList.add('center');
-    requestAnimationFrame(tick);
+    var cx=window.innerWidth/2;
+    var ii=((Math.round((cx-trackLeft-pos-pitch/2)/pitch))%L+L)%L;
+    if(ii!==cur){
+      if(cur>=0)allItems[cur].classList.remove('center');
+      allItems[ii].classList.add('center');
+      cur=ii;
+    }
+    rafId=requestAnimationFrame(tick);
   }
-  requestAnimationFrame(tick);
+  function startLoop(){if(rafId===null)rafId=requestAnimationFrame(tick);}
+  function stopLoop(){if(rafId!==null){cancelAnimationFrame(rafId);rafId=null;}}
+  var section=track.closest('.marquee-section');
+  if(section&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting)startLoop();else stopLoop();
+    },{rootMargin:'200px'}).observe(section);
+  }else startLoop();
 })();
 </script>
 <script>
@@ -954,6 +987,8 @@ if(heroSpotlight&&heroSection){
   if(!canvas)return;
   var app=null;
   var hero=canvas.closest('.hero');
+  var scrolling=false;
+  var scrollTimer=null;
   function heroVisible(){
     if(!hero)return true;
     var r=hero.getBoundingClientRect();
@@ -962,16 +997,37 @@ if(heroSpotlight&&heroSection){
   function syncPlay(){
     if(!app)return;
     try{
-      if(document.visibilityState!=='hidden'&&heroVisible())app.resume();else app.pause();
+      if(document.visibilityState!=='hidden'&&heroVisible()&&!scrolling){
+        if(app.isStopped){
+          app.play();
+          if(app._lastTime!==undefined)app._lastTime=performance.now();
+        }
+      }else{
+        if(!app.isStopped)app.stop();
+      }
     }catch(e){}
   }
+  window.addEventListener('scroll',function(){
+    if(!app)return;
+    if(!scrolling){scrolling=true;syncPlay();}
+    clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(function(){scrolling=false;syncPlay();},150);
+  },{passive:true});
   function initSpline(){
     if(app)return;
     import('https://unpkg.com/@splinetool/runtime@1.9.82/build/runtime.js').then(function(mod){
       try{
         app=new mod.Application(canvas);
         var p=app.load('https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode');
-        if(p&&p.then)p.then(syncPlay);else setTimeout(syncPlay,300);
+        if(p&&p.then)p.then(function(){
+          try{
+            if(app._renderer){
+              var maxPR=1.25;
+              if(app._renderer.getPixelRatio()>maxPR)app._renderer.setPixelRatio(maxPR);
+            }
+          }catch(e){}
+          syncPlay();
+        });else setTimeout(syncPlay,300);
       }catch(e){}
     }).catch(function(){});
   }
