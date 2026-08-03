@@ -1022,7 +1022,7 @@ if(heroSpotlight&&heroSection){
         if(p&&p.then)p.then(function(){
           try{
             if(app._renderer){
-              var maxPR=1.25;
+              var maxPR=1.0;
               if(app._renderer.getPixelRatio()>maxPR)app._renderer.setPixelRatio(maxPR);
             }
           }catch(e){}
