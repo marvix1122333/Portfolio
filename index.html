@@ -1158,15 +1158,16 @@ END:PARKED-TOPOLOGY-->
   var group=new THREE.Group();
   scene.add(group);
   var MOBILE=window.innerWidth<=768||(window.matchMedia&&window.matchMedia('(pointer:coarse)').matches);
-  var SPEED=MOBILE?1.0:0.4;
+  var SPEED=MOBILE?1.1:0.4;
   var numLines=MOBILE?36:60,pointsPerLine=MOBILE?60:100;
+  var xStep=MOBILE?0.36:0.22,yStep=MOBILE?0.33:0.2;
   var colorStart=new THREE.Color('#D1C5B4');
   var colorEnd=new THREE.Color('#7A7B76');
   for(var i=0;i<numLines;i++){
     var pts=[];
-    var xPos=(i-numLines/2)*0.22;
+    var xPos=(i-numLines/2)*xStep;
     for(var j=0;j<pointsPerLine;j++){
-      var yPos=(j-pointsPerLine/2)*0.2;
+      var yPos=(j-pointsPerLine/2)*yStep;
       pts.push(new THREE.Vector3(xPos,yPos,0));
     }
     var geo=new THREE.BufferGeometry().setFromPoints(pts);
@@ -1177,9 +1178,8 @@ END:PARKED-TOPOLOGY-->
   group.rotation.x=Math.PI/3;
   group.rotation.z=-Math.PI/8;
   function fitScene(){
-    var a=W.clientWidth/Math.max(W.clientHeight,1);
-    var f=Math.min(1,a/1.2);
-    group.scale.set(f,f,f);
+    if(MOBILE){ group.scale.set(1.0,1.0,1.0); }
+    else{ var a=W.clientWidth/Math.max(W.clientHeight,1); var f=Math.min(1,a/1.2); group.scale.set(f,f,f); }
   }
   fitScene();
   var clock=new THREE.Clock();
