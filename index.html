@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem('marvix_theme');if(t!=='light'&&t!=='dark')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}</script>
 <title>Iyanu Olamide | Product Designer</title>
 <link rel="icon" type="image/png" href="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png">
 <meta name="description" content="Product Designer crafting mobile apps and dashboard platforms for complex, multi-user products.">
@@ -202,6 +203,41 @@ section{padding:80px 160px}
 .tech-item{display:flex;align-items:center;justify-content:center;padding:20px;background:var(--card);border:1px solid var(--border);border-radius:var(--r);transition:all .3s}
 .tech-item:hover{border-color:rgba(255,255,255,.15);transform:translateY(-3px)}
 .tech-icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+/* ── THEME (dark default / light via inverted root filter) ── */
+html{background:var(--bg);color-scheme:dark}
+html[data-theme="light"]{filter:invert(1) hue-rotate(180deg);color-scheme:light}
+html[data-theme="light"] img,
+html[data-theme="light"] video{filter:invert(1) hue-rotate(180deg)}
+html[data-theme="light"] .nav-logo img{filter:none}
+html[data-theme="light"] .tech-icon svg,
+html[data-theme="light"] .tech-icon img{filter:invert(1) hue-rotate(180deg)}
+html[data-theme="light"] .pimg img,
+html[data-theme="light"] .pimg video{filter:grayscale(1) invert(1) hue-rotate(180deg)}
+html[data-theme="light"] .pcard:hover .pimg img,
+html[data-theme="light"] .pcard:hover .pimg video{filter:grayscale(0) invert(1) hue-rotate(180deg)}
+html[data-theme="light"] .marquee-item img{filter:grayscale(1) brightness(.35) invert(1) hue-rotate(180deg)}
+html[data-theme="light"] .marquee-item.center img{filter:invert(1) hue-rotate(180deg)}
+html[data-theme="light"] .lp-card img{filter:grayscale(100%) invert(1) hue-rotate(180deg)}
+html[data-theme="light"] .lp-card:hover img{filter:invert(1) hue-rotate(180deg)}
+/* theme toggle */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:none;border:none;cursor:pointer;color:var(--muted);transition:color .2s,background .2s;border-radius:120px;padding:0;height:32px;min-width:32px}
+.theme-toggle:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.theme-toggle svg{width:16px;height:16px;flex-shrink:0;display:block}
+.theme-toggle .ic-moon{display:none}
+html[data-theme="light"] .theme-toggle .ic-sun{display:none}
+html[data-theme="light"] .theme-toggle .ic-moon{display:block}
+.nav-links .theme-toggle{padding:0 8px;height:32px}
+.mobile-menu .theme-toggle{width:100%;height:auto;justify-content:flex-start;padding:14px 16px;border-radius:var(--rs);font-size:16px;font-weight:400;color:var(--muted)}
+.mobile-menu .theme-toggle:hover{background:rgba(255,255,255,.04)}
+.mobile-menu .theme-toggle .tt-label::after{content:"Light mode"}
+html[data-theme="light"] .mobile-menu .theme-toggle .tt-label::after{content:"Dark mode"}
+/* view-transition circular sweep */
+@media(prefers-reduced-motion:no-preference){
+  ::view-transition-image-pair(root){isolation:auto}
+  ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal;display:block}
+  ::view-transition-new(root){animation:themeReveal .6s cubic-bezier(.4,0,.2,1) forwards}
+}
+@keyframes themeReveal{from{clip-path:circle(0px at var(--tx,50%) var(--ty,50%))}to{clip-path:circle(var(--tr,150vmax) at var(--tx,50%) var(--ty,50%))}}
 .tech-icon svg,.tech-icon img{width:100%;height:100%;object-fit:contain}
 /* LOGO MARQUEE */
 .marquee-section{padding:20px 0 40px;overflow:hidden;position:relative}
@@ -441,6 +477,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
     <li data-sec="work"><button onclick="scrollToSec('work')">Projects</button></li>
     <li data-sec="process"><button onclick="scrollToSec('process')">Process</button></li>
     <li data-sec="contact"><button onclick="scrollToSec('contact')">Contact</button></li>
+    <li><button class="theme-toggle" onclick="toggleTheme(event)" aria-label="Toggle light and dark mode" title="Toggle light / dark"><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
     <li><a href="https://cal.com/iyanu-muritala-ezuryx" target="_blank" class="nav-cta">Book Call</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
@@ -451,6 +488,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
   <button onclick="scrollToSec('work');closeMenu()">Projects</button>
   <button onclick="scrollToSec('process');closeMenu()">Process</button>
   <button onclick="scrollToSec('contact');closeMenu()">Contact</button>
+  <button class="theme-toggle" onclick="toggleTheme(event);closeMenu()"><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span class="tt-label"></span></button>
   <button class="m-cta" onclick="openCV();closeMenu()">View Resume</button>
 </div>
 
@@ -578,7 +616,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 
 <section style="padding:0 60px">
   <div class="stats-row reveal">
-    <div class="stat-item"><div class="stat-num" data-target="3">0</div><div class="stat-label">product case studies</div></div>
+    <div class="stat-item"><div class="stat-num" data-target="4">0</div><div class="stat-label">product case studies</div></div>
     <div class="stat-item"><div class="stat-num" data-target="4">0</div><div class="stat-label">client projects</div></div>
   </div>
 </section>
@@ -778,6 +816,11 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <div class="cs-hero"><div class="cs-orb"></div><div class="eyebrow">Case Study &middot; Landing Page Redesign</div><h1 class="cs-title">TrueConnect</h1><p class="cs-desc">A redesign of the TrueConnect landing page and early user flows, completed as a Stage 2 design challenge for a UI/UX role.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px"><span class="pt m">Design Challenge</span><span class="pt m">Redesign</span><span class="pt m">Landing Page</span></div><div class="csmeta"><div class="csmitem"><div class="csmlabel">My Role</div><div class="csmval">Product Designer (Design Challenge)</div></div><div class="csmitem"><div class="csmlabel">Tools</div><div class="csmval">Figma + Prototyping</div></div></div></div>
 <div class="cs-body">
 <h2 class="cbh2">The Brief</h2><p class="cbp">TrueConnect is a connection platform for Africans across the continent and in the diaspora. For this challenge, I had full freedom to define a target audience, choose my own visual direction, and decide which screens best showed my thinking, rather than redesign the entire app.</p>
+</div>
+<div class="scr-section"><div class="scr-label">The Redesign</div><div class="sgrid sg1">
+<div class="scrcard auto-scroll-card" data-scroll-dur="18" style="height:clamp(1050px,145vh,1550px)"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/trueconnect/Landing Page.webp" alt="TrueConnect landing page" onclick="openModal(this)"></div><div class="cs-overlay-cap">The full landing page &middot; hover to scroll</div></div>
+</div></div>
+<div class="cs-body">
 <h2 class="cbh2">Target Audience</h2><p class="cbp">I designed for adults 18+ across Africa and the diaspora who want an honest, clearly defined kind of connection: people ready for marriage, people giving love a second chance, people who want something casual, and people who want friendship or networking. I kept TrueConnect&rsquo;s African and diaspora base, since that is what the product is built for. What I widened was intent. The product&rsquo;s real differentiator is that people state what they want upfront, so I designed for that full range instead of a generic &ldquo;young singles&rdquo; audience.</p>
 <h2 class="cbh2">Visual Direction</h2><p class="cbp">I kept gold as the main action color and changed what black does. Instead of a mostly dark page, I went light and warm: cream backgrounds, near-black ink, and terracotta as an accent. A mostly dark page reads as a security product, and this is a product about human connection. Dark is reserved for three places: AI Matching, where dark is the convention for tech; Elite Concierge, where dark signals exclusivity; and the footer. Gold means clickable, terracotta means emphasis. Headlines use Fraunces for warmth, with an italic accent word, while body text stays in a clear, neutral sans-serif.</p>
 <h2 class="cbh2">What I Looked At, and What I Found</h2><p class="cbp">I reviewed the product as a visitor first, then signed in, covering the landing page, onboarding, and dashboard. The main problems:</p>
@@ -795,9 +838,6 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <div class="cbcell"><h3 class="cbh3">Intent Lock, reframed</h3><p class="cbp">I first tried visualizing the 90-day lock as a countdown, diagrams of time, orbits, locked and unlocked states. Then I realized the copy was never about a countdown, it was about filtering who you see. So the visual became a pool narrowing down to one intent.</p></div>
 </div>
 </div>
-<div class="scr-section"><div class="scr-label">The Redesign</div><div class="sgrid sg1">
-<div class="scrcard auto-scroll-card" data-scroll-dur="18" style="height:clamp(1050px,145vh,1550px)"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/trueconnect/Landing Page.webp" alt="TrueConnect landing page" onclick="openModal(this)"></div><div class="cs-overlay-cap">The full landing page &middot; hover to scroll</div></div>
-</div></div>
 <div class="scr-section"><div class="scr-label">Early User Flows</div><div class="deskgrid" style="align-items:start">
 <div class="scrcard"><img loading="lazy" decoding="async" src="assets/trueconnect/Register.webp" alt="Register" onclick="openModal(this)"><div class="scrcap">Register</div></div>
 <div class="scrcard"><img loading="lazy" decoding="async" src="assets/trueconnect/Onboarding.webp" alt="Onboarding" onclick="openModal(this)"><div class="scrcap">Onboarding</div></div>
@@ -1002,6 +1042,24 @@ window.addEventListener('popstate',function(e){
 function scrollToSec(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})}
 function toggleMenu(){document.getElementById('mmenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mmenu').classList.remove('open')}
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('marvix_theme',t)}catch(e){}}
+function toggleTheme(ev){
+  var root=document.documentElement;
+  var cur=root.getAttribute('data-theme')==='light'?'light':'dark';
+  var next=cur==='light'?'dark':'light';
+  var x=window.innerWidth/2,y=window.innerHeight/2;
+  if(ev){
+    if(ev.clientX||ev.clientY){x=ev.clientX;y=ev.clientY;}
+    else if(ev.currentTarget){var r=ev.currentTarget.getBoundingClientRect();x=r.left+r.width/2;y=r.top+r.height/2;}
+  }
+  var dx=Math.max(x,window.innerWidth-x),dy=Math.max(y,window.innerHeight-y);
+  root.style.setProperty('--tx',x+'px');
+  root.style.setProperty('--ty',y+'px');
+  root.style.setProperty('--tr',Math.round(Math.sqrt(dx*dx+dy*dy))+'px');
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(document.startViewTransition&&!reduce){document.startViewTransition(function(){applyTheme(next)})}
+  else{applyTheme(next)}
+}
 function toggleFaq(btn){var a=btn.parentElement.querySelector('.faqa');var open=btn.classList.contains('open');document.querySelectorAll('.faqq').forEach(function(b){b.classList.remove('open');var panel=b.parentElement.querySelector('.faqa');panel.style.maxHeight='0';panel.style.opacity='0'});if(!open){btn.classList.add('open');a.style.opacity='1';a.style.maxHeight=a.scrollHeight+'px'}}
 function filterFaq(cat,tabBtn){document.querySelectorAll('.faq-tab').forEach(function(t){t.classList.remove('active')});tabBtn.classList.add('active');document.querySelectorAll('.faqitem').forEach(function(item){if(cat==='all'||item.dataset.cat===cat){item.classList.remove('hidden')}else{item.classList.add('hidden')}})}
 function initReveal(){var els=document.querySelectorAll('.page.active .reveal');var obs=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('visible')},i*65);obs.unobserve(e.target)}})},{threshold:0.07});els.forEach(function(el){el.classList.remove('visible');obs.observe(el)})}
