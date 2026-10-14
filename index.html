@@ -39,6 +39,8 @@ a,button,.nav-logo,.pcard,.nxt-proj,.lp-card,.lp-explore,.lp-seeall,.scrcard,.au
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:1000;transition:width .1s;width:0}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:72px;background:rgba(8,8,8,.96);border-bottom:1px solid var(--border);animation:navSlideDown .5s ease both}
 @keyframes navSlideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+#mainnav{top:18px;left:50%;right:auto;transform:translateX(-50%);width:auto;max-width:calc(100% - 32px);height:auto;justify-content:center;gap:24px;padding:8px 14px 8px 18px;border:1px solid var(--border);border-radius:120px;background:rgba(12,12,12,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 10px 30px rgba(0,0,0,.35);animation:navPillIn .45s ease both}
+@keyframes navPillIn{from{opacity:0;transform:translateX(-50%) translateY(-140%)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
 .nav-logo{animation:navItemIn .5s .15s ease both}
 .nav-links li{animation:navItemIn .4s ease both}
 .nav-links li:nth-child(1){animation-delay:.2s}
@@ -48,18 +50,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-links li:nth-child(5){animation-delay:.48s}
 @keyframes navItemIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
 .nav-logo{cursor:pointer;display:flex;align-items:center}
-.nav-logo img{height:32px;width:auto}
-.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
-.nav-links button{font-size:15px;font-weight:400;color:var(--muted);transition:color .2s;background:none;border:none;padding:0}
+.nav-logo img{height:22px;width:auto}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
 .nav-links li{position:relative}
-.nav-links li::after{content:'';position:absolute;bottom:-6px;left:50%;width:0;height:1px;background:var(--text);transition:width .25s ease,left .25s ease;border-radius:1px}
-.nav-links li:hover::after,.nav-links li.active::after{width:100%;left:0}
-.nav-links button:hover{color:var(--text)}
-.nav-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(180deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.04) 100%);color:var(--text)!important;padding:10px 24px;border-radius:120px;font-weight:500;font-size:15px;border:1px solid rgba(255,255,255,.1);transition:all .2s;backdrop-filter:blur(5px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.nav-links button{font-size:13px;font-weight:400;color:var(--muted);transition:color .2s,background .2s;background:none;border:none;padding:7px 14px;border-radius:120px;line-height:1}
+.nav-links button:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.nav-links li.active button{color:var(--text);background:rgba(255,255,255,.1)}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(180deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.04) 100%);color:var(--text)!important;padding:8px 18px;border-radius:120px;font-weight:500;font-size:13px;border:1px solid rgba(255,255,255,.1);transition:all .2s;backdrop-filter:blur(5px);box-shadow:inset 0 1px 0 rgba(255,255,255,.08);margin-left:8px}
 .nav-cta:hover{background:linear-gradient(180deg,rgba(255,255,255,.18) 0%,rgba(255,255,255,.08) 100%);transform:translateY(-1px)}
 .hamburger{display:none;flex-direction:column;gap:6px;width:28px;padding:4px 0}
 .hamburger span{height:2px;background:var(--text);border-radius:2px;transition:all .3s}
-.mobile-menu{position:fixed;top:72px;left:0;right:0;background:#0a0a0a;border-bottom:1px solid var(--border);padding:20px;flex-direction:column;gap:4px;z-index:99;display:flex;transform:translateY(-10px);opacity:0;pointer-events:none;transition:all .25s ease}
+.mobile-menu{position:fixed;top:74px;left:16px;right:16px;background:#0a0a0a;border:1px solid var(--border);border-radius:var(--r);padding:16px;flex-direction:column;gap:4px;z-index:99;display:flex;transform:translateY(-10px);opacity:0;pointer-events:none;transition:all .25s ease;box-shadow:0 20px 40px rgba(0,0,0,.5)}
 .mobile-menu.open{transform:translateY(0);opacity:1;pointer-events:auto}
 .mobile-menu button{text-align:left;font-size:16px;font-weight:400;color:var(--muted);padding:14px 16px;border-radius:var(--rs);transition:background .2s;background:none;border:none;width:100%}
 .mobile-menu button:hover{background:rgba(255,255,255,.04)}
@@ -260,8 +261,12 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 .cbh2:first-child{margin-top:0}
 .cbh3{font-family:'Satoshi',sans-serif;font-size:21px;font-weight:700;color:var(--text);letter-spacing:-.1px;margin-bottom:13px;margin-top:30px;line-height:1.2}
 .cbp{color:var(--muted);font-size:15.5px;line-height:1.9;margin-bottom:15px;font-weight:300}
-.cbgrid{display:grid;grid-template-columns:1fr 1fr;gap:32px 44px;margin-top:30px;align-items:start}
-.cbgrid .cbh3{margin-top:0}
+.cbgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px;align-items:stretch;counter-reset:cbc}
+.cbcell{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px 28px 30px;transition:border-color .25s ease,transform .25s ease}
+.cbcell:hover{border-color:rgba(255,255,255,.16);transform:translateY(-3px)}
+.cbcell::before{counter-increment:cbc;content:"0" counter(cbc);display:block;font-family:'Satoshi',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--accent);margin-bottom:14px}
+.cbcell .cbh3{margin:0 0 12px;font-size:18px;line-height:1.3}
+.cbcell .cbp{font-size:14.5px;line-height:1.8;margin-bottom:0}
 .cbp strong{color:var(--text);font-weight:500}
 .hbox{background:var(--accent-light);border:1px solid var(--accent-border);border-radius:var(--r);padding:22px 26px;margin:26px 0}
 .hbox p{color:var(--text);font-size:14.5px;line-height:1.72;margin:0}
@@ -287,6 +292,10 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 .fill-card img{width:100%;height:100%;display:block;object-fit:fill}
 .cs-overlay-cap{position:absolute;bottom:0;left:0;right:0;padding:20px 16px 14px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:13px;font-weight:500;letter-spacing:.3px;pointer-events:none;z-index:2;transition:backdrop-filter .3s ease,background .3s ease}
 .auto-scroll-card:hover .cs-overlay-cap{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:linear-gradient(transparent,rgba(0,0,0,.6))}
+.deskgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.deskgrid .auto-scroll-card{flex:none;width:100%;height:clamp(300px,42vh,470px)}
+@media(max-width:768px){.deskgrid{grid-template-columns:repeat(2,1fr);gap:14px}}
+@media(max-width:480px){.deskgrid{grid-template-columns:1fr}}
 .fill-card:hover .cs-overlay-cap{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);background:linear-gradient(transparent,rgba(0,0,0,.7))}
 .scrcap{padding:13px 15px;font-size:12.5px;color:var(--muted);line-height:1.4}
 /* ── PROTO BOX ── */
@@ -389,7 +398,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 @keyframes pageOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-12px)}}
 /* ── CASE STUDY RESPONSIVE ── */
 @media(max-width:1024px){.cs-nav{padding:0 32px}.cs-hero{padding:120px 32px 64px}.cs-body{padding:64px 32px}.scr-section{padding:0 32px 60px}.proto-box{margin:0 32px 60px}.nxt-proj{margin:0 32px 60px}}
-@media(max-width:768px){.cs-nav{padding:0 20px;height:64px}.cs-hero{padding:100px 20px 56px}.cs-title{font-size:44px;letter-spacing:-.01em}.csmeta{flex-direction:column;gap:14px}.csmitem{padding:0;border-right:none;margin-right:0;border-bottom:1px solid var(--border);padding-bottom:14px}.csmitem:last-child{border-bottom:none;padding-bottom:0}.cs-body{padding:52px 20px}.cbgrid{grid-template-columns:1fr;gap:26px}.scr-section{padding:0 20px 56px}.proto-box{margin:0 20px 56px;padding:24px 18px}.nxt-proj{margin:0 20px 56px;padding:24px 20px;position:relative;padding-right:60px}.nxt-proj .nxt-arrow{position:absolute;top:24px;right:24px}}
+@media(max-width:768px){.cs-nav{padding:0 20px;height:64px}.cs-hero{padding:100px 20px 56px}.cs-title{font-size:44px;letter-spacing:-.01em}.csmeta{flex-direction:column;gap:14px}.csmitem{padding:0;border-right:none;margin-right:0;border-bottom:1px solid var(--border);padding-bottom:14px}.csmitem:last-child{border-bottom:none;padding-bottom:0}.cs-body{padding:52px 20px}.cbgrid{grid-template-columns:1fr;gap:16px}.scr-section{padding:0 20px 56px}.proto-box{margin:0 20px 56px;padding:24px 18px}.nxt-proj{margin:0 20px 56px;padding:24px 20px;position:relative;padding-right:60px}.nxt-proj .nxt-arrow{position:absolute;top:24px;right:24px}}
 @media(max-width:480px){.cs-hero{padding:90px 16px 48px}.cs-title{font-size:36px;letter-spacing:-.01em}.pgrid{grid-template-columns:1fr;gap:12px}.sg4{grid-template-columns:repeat(2,1fr)}.sg2{grid-template-columns:1fr}.cs-nav{padding:0 16px}.scr-section .sgrid{gap:24px;padding:0 0 12px;scroll-padding:0}.scr-section .sgrid .scrcard{width:80vw;flex:0 0 80vw;border-radius:var(--r)}.scr-section .sgrid.sg1{gap:24px}.scr-section .sgrid.sg1 .scrcard{width:85vw;flex:0 0 85vw;height:auto !important}}
 @media(max-width:900px) and (min-width:769px){.cs-nav{padding:0 36px}.cs-hero{padding:108px 36px 60px}.cs-body{padding:60px 36px}.scr-section{padding:0 36px 60px}.nxt-proj{margin:0 36px 60px}.proto-box{margin:0 36px 60px}}
 /* ── LANDING PAGE EXPLORATIONS ── */
@@ -423,15 +432,17 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <nav id="mainnav">
   <div class="nav-logo" onclick="goHome()"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div>
   <ul class="nav-links">
-    <li><button onclick="scrollToSec('about')">Services</button></li>
-    <li><button onclick="scrollToSec('work')">Projects</button></li>
-    <li><button onclick="scrollToSec('process')">Process</button></li>
-    <li><button onclick="scrollToSec('contact')">Contact</button></li>
+    <li data-sec="home"><button onclick="window.scrollTo({top:0,behavior:'smooth'})">Home</button></li>
+    <li data-sec="about"><button onclick="scrollToSec('about')">Services</button></li>
+    <li data-sec="work"><button onclick="scrollToSec('work')">Projects</button></li>
+    <li data-sec="process"><button onclick="scrollToSec('process')">Process</button></li>
+    <li data-sec="contact"><button onclick="scrollToSec('contact')">Contact</button></li>
     <li><a href="https://cal.com/iyanu-muritala-ezuryx" target="_blank" class="nav-cta">Book Call</a></li>
   </ul>
   <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mmenu">
+  <button onclick="window.scrollTo({top:0,behavior:'smooth'});closeMenu()">Home</button>
   <button onclick="scrollToSec('about');closeMenu()">Services</button>
   <button onclick="scrollToSec('work');closeMenu()">Projects</button>
   <button onclick="scrollToSec('process');closeMenu()">Process</button>
@@ -491,7 +502,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
       <p>I combine user research, information architecture, and design systems to create interfaces that are simple, scalable, and practical to build. My goal is to design products that not only look polished but also solve real problems and make everyday tasks easier for the people who use them.</p>
       <p><em>I'm always exploring new ways to design thoughtful products and leverage AI to improve user experiences.</em></p>
       <div class="skills-strip">
-        <span class="skill-pill">Product Design</span><span class="skill-pill">User Interface</span><span class="skill-pill">User Experience</span><span class="skill-pill">Research</span><span class="skill-pill">Prototyping</span><span class="skill-pill">Figma</span><span class="skill-pill">Design Systems</span><span class="skill-pill">HTML</span><span class="skill-pill">CSS</span><span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Product Design</span><span class="skill-pill">User Interface</span><span class="skill-pill">User Experience</span><span class="skill-pill">Research</span><span class="skill-pill">Prototyping</span><span class="skill-pill">Figma</span><span class="skill-pill">Design Systems</span><span class="skill-pill">HTML</span><span class="skill-pill">CSS</span>
       </div>
     </div>
   </div>
@@ -505,6 +516,7 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
     <div class="pcard" onclick="showCase('bladeroom')"><div class="pimg"><img loading="lazy" decoding="async" src="assets/bladeroom/Cover.webp" alt="BladeRoom"></div><div class="pbtn-wrap"><div class="pname">BladeRoom</div><p class="pdesc">AI-powered hairstyle discovery &amp; booking platform with virtual TryOn.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
     <div class="pcard" onclick="showCase('gloroq')"><div class="pimg"><video src="assets/gloroq/cover.mp4" autoplay muted loop playsinline></video></div><div class="pbtn-wrap"><div class="pname">Gloroq</div><p class="pdesc">Global gaming competition platform with dual dashboards &amp; a color system built for long screen sessions.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
     <div class="pcard" onclick="showCase('uvs')"><div class="pimg"><img loading="lazy" decoding="async" src="assets/uvs/Cover Image.webp" alt="UVS"></div><div class="pbtn-wrap"><div class="pname">UVS</div><p class="pdesc">Multi-entity barbering platform with 3 onboarding paths, dark mode &amp; admin dashboard.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
+    <div class="pcard" onclick="showCase('deleo')"><div class="pimg"><img loading="lazy" decoding="async" src="assets/deleo/Home Dashboard.webp" alt="Deleo Group"></div><div class="pbtn-wrap"><div class="pname">Deleo Group</div><p class="pdesc">Student admissions platform with a guided application flow &amp; real-time tracking.</p><span class="pbtn">View Case Study &rarr;</span></div></div>
   </div>
 </section>
 
@@ -714,6 +726,42 @@ footer{padding:28px 60px;border-top:1px solid var(--border);display:flex;justify
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/uvs/Admin Dashboard - Users.webp" alt="Admin Users" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin, Users</div></div>
 <div class="scrcard auto-scroll-card"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/uvs/Admin Create Account.webp" alt="Admin Create Account" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin, Create Account</div></div>
 </div></div>
+<div class="nxt-proj" onclick="showCase('deleo')"><div><div class="nxt-label">Next project</div><div class="nxt-name">Deleo Group</div></div><div class="nxt-arrow">&rarr;</div></div>
+<footer><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><div class="fcopy"><span>&copy; 2026 Marvix</span></div></footer>
+</div>
+
+<!-- DELEO GROUP CASE STUDY -->
+<div class="page" id="page-deleo">
+<nav class="cs-nav"><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><button class="back-btn" onclick="goHome()">&larr; Back to portfolio</button></nav>
+<div class="cs-hero"><div class="cs-orb"></div><div class="eyebrow">Case Study &middot; Mobile App</div><h1 class="cs-title">Deleo Group</h1><p class="cs-desc">A mobile platform helping students discover and apply to schools in Canada, with a guided registration flow and real-time application tracking.</p><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:36px"><span class="pt m">Mobile App</span><span class="pt m">Multi-Step Forms</span><span class="pt m">Admissions</span></div><div class="csmeta"><div class="csmitem"><div class="csmlabel">My Role</div><div class="csmval">Product Designer</div></div><div class="csmitem"><div class="csmlabel">Platform</div><div class="csmval">Mobile App</div></div><div class="csmitem"><div class="csmlabel">Tools</div><div class="csmval">Figma + Prototyping</div></div><div class="csmitem"><div class="csmlabel">Client</div><div class="csmval">Deleo Group, from a PRD prepared by LionAbiola Technologies</div></div><div class="csmitem"><div class="csmlabel">Timeline</div><div class="csmval">Oct 2026, 2-week engagement</div></div><div class="csmitem"><div class="csmlabel">Status</div><div class="csmval">Live in production</div></div></div></div>
+<div class="cs-body">
+<h2 class="cbh2">Why application tracking needed to be trustworthy, not just functional</h2><p class="cbp">Students exploring study opportunities in Canada rely on scattered information across websites and agents, with no reliable way to track where an application actually stands. Deleo&rsquo;s goal was to give students one place to discover schools, apply through a guided flow, and know their real status, while giving the founder&rsquo;s team a working system to manage incoming applications.</p><h2 class="cbh2">The Solution</h2><p class="cbp">Working from a PRD prepared by LionAbiola Technologies, I designed the full V1 student experience alongside the admin system needed to run it: registration, onboarding by field of study, a filtered browse feed, program details, a guided multi-step application, and status tracking.</p>
+<div class="cbgrid">
+<div class="cbcell"><h3 class="cbh3">Submission gated by complete documents</h3><p class="cbp">The PRD called for a guided application flow. I pushed one decision further: the form blocks submission until every required document for the selected program is uploaded. This came from firsthand experience, in a past role processing study-abroad applications, where missing documents were the most common cause of delayed admissions and students left with false hope that their application was progressing when it hadn&rsquo;t even been sent. Gating submission on complete documents means a student always knows exactly where they stand.</p></div>
+<div class="cbcell"><h3 class="cbh3">A simple field-of-study match, by design</h3><p class="cbp">Rather than a recommendation algorithm, V1 matches students to schools using one signal: their selected field of study, tagging each school/program record the same way and filtering the browse feed accordingly. This was a deliberate scope decision, keeping V1 simple and shipping a working product before adding ranking or multi-factor matching once there&rsquo;s real usage data to justify it.</p></div>
+<div class="cbcell"><h3 class="cbh3">A 4-stage status system admins actually control</h3><p class="cbp">Received, Processing, Approved, Rejected. The first stage is automatic on submission; every stage after that is triggered by an admin action, which meant designing both sides of the same state: what a student sees on their tracker, and what an admin clicks to move them there. For rejections, I designed a preset reason dropdown (e.g. &ldquo;Incomplete documents,&rdquo; &ldquo;Did not meet requirements&rdquo;) plus an optional free-text note, so admins can give specific feedback without writing one from scratch every time.</p></div>
+<div class="cbcell"><h3 class="cbh3">An admin panel built for non-technical staff</h3><p class="cbp">School and program data is entered manually, with no live data feed in V1, so the admin screens for managing listings and reviewing applications had to be usable by staff with no technical background. I kept those screens deliberately plain: clear labels, uncluttered tables, and simple actions for reviewing an application, updating its status, or adding a school or program.</p></div>
+</div>
+</div>
+<div class="scr-section"><div class="scr-label">Student Flow</div><div class="sgrid sg4">
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/Register.webp" alt="Register" onclick="openModal(this)"><div class="scrcap">Register</div></div>
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/Onboarding.webp" alt="Onboarding" onclick="openModal(this)"><div class="scrcap">Onboarding</div></div>
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/Home Dashboard.webp" alt="Home Dashboard" onclick="openModal(this)"><div class="scrcap">Home Dashboard</div></div>
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/DLI Schools.webp" alt="DLI Schools" onclick="openModal(this)"><div class="scrcap">DLI Schools</div></div>
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/Filter.webp" alt="Filter" onclick="openModal(this)"><div class="scrcap">Filter</div></div>
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/Course Details.webp" alt="Course Details" onclick="openModal(this)"><div class="scrcap">Course Details</div></div>
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/Apply.webp" alt="Apply" onclick="openModal(this)"><div class="scrcap">Apply</div></div>
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/Success.webp" alt="Submission Success" onclick="openModal(this)"><div class="scrcap">Submission Success</div></div>
+<div class="scrcard"><img loading="lazy" decoding="async" class="mob" src="assets/deleo/Application Status.webp" alt="Application Status" onclick="openModal(this)"><div class="scrcap">Application Status</div></div>
+</div></div>
+<div class="scr-section"><div class="scr-label">Admin Dashboard</div><div class="deskgrid">
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/deleo/Admin - Home.webp" alt="Admin Home" onclick="openModal(this)"></div><div class="cs-overlay-cap">Admin Home</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/deleo/Admin - Applications.webp" alt="Applications List" onclick="openModal(this)"></div><div class="cs-overlay-cap">Applications List</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/deleo/Admin - Application Details.webp" alt="Application Details" onclick="openModal(this)"></div><div class="cs-overlay-cap">Application Details</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/deleo/Admin - Program.webp" alt="Programs" onclick="openModal(this)"></div><div class="cs-overlay-cap">Programs</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/deleo/Admin - Edit Program.webp" alt="Edit Program" onclick="openModal(this)"></div><div class="cs-overlay-cap">Edit Program</div></div>
+<div class="scrcard auto-scroll-card" data-scroll-dur="2"><div class="auto-scroll-img"><img loading="lazy" decoding="async" src="assets/deleo/Admin - Open Program.webp" alt="Open Program" onclick="openModal(this)"></div><div class="cs-overlay-cap">Open Program</div></div>
+</div></div>
 <div class="nxt-proj" onclick="showCase('bladeroom')"><div><div class="nxt-label">Back to first project</div><div class="nxt-name">BladeRoom</div></div><div class="nxt-arrow">&rarr;</div></div>
 <footer><div class="nav-logo" onclick="goHome()" style="cursor:pointer"><img src="magnific_generate-a-logo-for-marvi_dIpVbzQXSL.png" alt="Marvix"></div><div class="fcopy"><span>&copy; 2026 Marvix</span></div></footer>
 </div>
@@ -919,7 +967,7 @@ var scTicking=false;
 function onScroll(){
   scTicking=false;
   var nav=document.getElementById('mainnav');
-  if(nav)nav.style.borderBottomColor=window.scrollY>40?'rgba(255,255,255,.15)':'rgba(255,255,255,.1)';
+  if(nav)nav.style.borderColor=window.scrollY>40?'rgba(255,255,255,.15)':'rgba(255,255,255,.1)';
   var docH=document.documentElement.scrollHeight-window.innerHeight;
   var pct=docH>0?(window.scrollY/docH)*100:0;
   document.getElementById('scrollProgress').style.width=pct+'%';
@@ -928,15 +976,18 @@ function onScroll(){
   updateActiveNav();
 }
 window.addEventListener('scroll',function(){if(!scTicking){scTicking=true;requestAnimationFrame(onScroll)}},{passive:true});
-var navSections=['about','work','process','faq'];
+var navSections=['about','work','process','contact'];
 function updateActiveNav(){
-  var activeIdx=-1;
-  navSections.forEach(function(id,i){
+  var activeSec='home';
+  navSections.forEach(function(id){
     var el=document.getElementById(id);
-    if(el&&el.getBoundingClientRect().top<=180)activeIdx=i;
+    if(el&&el.getBoundingClientRect().top<=180)activeSec=id;
   });
   var links=document.querySelectorAll('.nav-links li');
-  for(var i=0;i<links.length;i++){if(i===activeIdx)links[i].classList.add('active');else links[i].classList.remove('active')}
+  for(var i=0;i<links.length;i++){
+    if(links[i].dataset.sec===activeSec)links[i].classList.add('active');
+    else links[i].classList.remove('active');
+  }
 }
 var cursorDot=document.getElementById('cursorDot');var cursorVisible=false;
 document.addEventListener('mousemove',function(e){if(!cursorVisible){cursorDot.classList.add('visible');cursorVisible=true}cursorDot.style.transform='translate('+(e.clientX-6)+'px,'+(e.clientY-6)+'px)'});
